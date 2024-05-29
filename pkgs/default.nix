@@ -1,0 +1,7 @@
+{ configs }:
+
+{
+	imports = [
+./system
+];
+}
