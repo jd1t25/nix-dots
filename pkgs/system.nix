@@ -24,5 +24,7 @@ ethtool
 pciutils
 usbutils
 vim
+wl-clipboard
+wofi-emoji
  ];
 }
