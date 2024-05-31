@@ -1,10 +1,8 @@
-{ config }:
+{ config, lib, inputs, ... }:
 
 {
  imports = [
 
-./configuration
-./hardware-configuration
-./envVar
+./configuration.nix
  ];
 }

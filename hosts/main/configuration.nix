@@ -2,12 +2,15 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ...  }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../pkgs/system.nix
+      ../../modules/wm/hyprland
+      inputs.home-manager.nixosModules.default
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -20,6 +23,7 @@
   boot.loader.grub.useOSProber = true;	
   boot.loader.grub.efiSupport = true;
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.loader.grub.configurationLimit = 10;
 
   networking.hostName = "gan45ha"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -63,11 +67,15 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  
+#  programs.zsh.enabled = true;
+programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.jd1t = {
      isNormalUser = true;
      extraGroups = ["networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+     shell = pkgs.zsh;
   #   packages = with pkgs; [
   #     firefox
   #     tree
@@ -76,6 +84,21 @@
   #     wofi
   #   ];
    };
+
+	home-manager = {
+		extraSpecialArgs = { inherit inputs; };
+		users = {
+			"jd1t" = import ./home.nix;
+		};
+};
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+ 
+  nix.settings.auto-optimise-store = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -89,6 +112,9 @@
 
    environment.variables.EDITOR = "vim";
    environment.pathsToLink = [ "/share/zsh" ];
+   environment.extraInit = ''
+    unset -v SSH_ASKPASS
+  '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

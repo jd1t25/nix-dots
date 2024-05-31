@@ -6,7 +6,7 @@
   programs.hyprland = { # we use this instead of putting it in systemPackages/users  
  	enable = true;  
   	xwayland.enable = true;  
-	extraConfig = (builtins.readFile ../../../configs/hypr/hyrpland.conf)
+	#xdg.configFile.hypr = { source = ../../../configs/ }
   };
  
   services.xserver.videoDrivers = [ "nvidia" ];

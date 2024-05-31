@@ -3,7 +3,9 @@
 {
 
   imports = [
-	./modules	
+	../../modules/main.nix
+	./envVar.nix
+	../../pkgs/home.nix
 ];
 
   home.username = "jd1t";

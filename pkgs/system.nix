@@ -23,6 +23,6 @@ lm_sensors
 ethtool
 pciutils
 usbutils
-
+vim
  ];
 }

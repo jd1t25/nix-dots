@@ -1,12 +1,12 @@
-{ pkgs } :
+{ pkgs, lib, ... } :
 
 {
-	home.packages = [
+	home.packages = with pkgs; [
 pulsemixer
 kitty
 firefox
 wofi
-
+telegram-desktop
 
 ];
 }

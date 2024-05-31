@@ -7,30 +7,35 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs"
-  };
+    alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      gan45ha = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-	  ./hosts/main 
-
-          environment.systemPackages = [alejandra.defaultPackage.${system}];
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.jd1t = import ./hosts/main/home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	    #home-manager.extraSpecialArgs = { inherit unstable; };
-          }
-        ];
-      };
+     nixvim = {
+      url = "github:nix-community/nixvim";
+      # url = "/home/gaetan/perso/nix/nixvim/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs = inputs@{ nixpkgs, home-manager, alejandra, nixvim, ... }: 
+
+ let
+ 	system = "x86_64-linux";
+	pkgs = nixpkgs.legacyPackages.${system};
+ in
+{
+	formatter.${system} = pkgs.alejandra;
+	nixosConfigurations."gan45ha" = nixpkgs.lib.nixosSystem {
+		specialArgs = { inherit inputs; };
+		modules = [
+			{
+            environment.systemPackages = [alejandra.defaultPackage.${system}];
+          }
+			./hosts/main
+			inputs.home-manager.nixosModules.default
+		];
+	};	
+    };
+  
 }
