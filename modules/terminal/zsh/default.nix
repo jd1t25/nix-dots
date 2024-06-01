@@ -16,7 +16,7 @@
     shellAliases = {
       ll = "ls -al";
       "." = "cd ..";
-      rbld = "git add ~/nix-dots/.; sudo nixos-rebuild switch --flake ~/nix-dots/.#";
+      rbld = "git add ~/nix-dots/.; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
       pmx = "pulsemixer";
       v = "nvim";
     };
