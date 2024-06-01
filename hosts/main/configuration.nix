@@ -1,37 +1,41 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, inputs, ...  }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../pkgs/system.nix
-      ../../modules/wm/hyprland
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../pkgs/system.nix
+    ../../modules/wm/hyprland
+    inputs.home-manager.nixosModules.default
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;	
+  boot.loader.grub.useOSProber = true;
   boot.loader.grub.efiSupport = true;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
   boot.loader.grub.configurationLimit = 10;
 
   networking.hostName = "gan45ha"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
+  time.hardwareClockInLocalTime = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -48,11 +52,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
   # Enable the GNOME Desktop Environment.
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -67,37 +69,40 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
-#  programs.zsh.enabled = true;
-programs.zsh.enable = true;
+
+  #  programs.zsh.enabled = true;
+  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.jd1t = {
-     isNormalUser = true;
-     extraGroups = ["networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.zsh;
-  #   packages = with pkgs; [
-  #     firefox
-  #     tree
-  #     dmenu
-  #     kitty
-  #     wofi
-  #   ];
-   };
+  users.users.jd1t = {
+    isNormalUser = true;
+    extraGroups = ["networkmanager" "wheel"]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+    #   packages = with pkgs; [
+    #     firefox
+    #     tree
+    #     dmenu
+    #     kitty
+    #     wofi
+    #   ];
+  };
 
-	home-manager = {
-		extraSpecialArgs = { inherit inputs; };
-		users = {
-			"jd1t" = import ./home.nix;
-		};
-};
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "jd1t" = import ./home.nix;
+    };
+  };
+
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
 
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 1w";
   };
- 
+
   nix.settings.auto-optimise-store = true;
 
   # List packages installed in system profile. To search, run:
@@ -110,9 +115,9 @@ programs.zsh.enable = true;
   #   ntfs3g
   # ];
 
-   environment.variables.EDITOR = "vim";
-   environment.pathsToLink = [ "/share/zsh" ];
-   environment.extraInit = ''
+  environment.variables.EDITOR = "vim";
+  environment.pathsToLink = ["/share/zsh"];
+  environment.extraInit = ''
     unset -v SSH_ASKPASS
   '';
 
@@ -157,6 +162,4 @@ programs.zsh.enable = true;
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-

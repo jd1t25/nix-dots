@@ -26,5 +26,11 @@ usbutils
 vim
 wl-clipboard
 wofi-emoji
+brave
+libnotify
+eww
+mako
+tofi
+
  ];
 }

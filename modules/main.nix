@@ -4,6 +4,5 @@
 	./terminal
 	./configs
 	./git
-	./nixvim
 ];
 }
