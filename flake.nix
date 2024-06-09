@@ -42,7 +42,7 @@
         {
           environment.systemPackages = [
             alejandra.defaultPackage.${system}
-            inputs.nixvim.packages.${pkgs.system}.default
+            # inputs.nixvim.packages.${pkgs.system}.default
           ];
         }
         ./hosts/main
@@ -54,7 +54,10 @@
       "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {system = "x86_64-linux";};
         extraSpecialArgs = {inherit username inputs;};
-        modules = [(import ./hosts/main/home.nix)];
+        modules = [
+          (import ./hosts/main/home.nix)
+          <nixvim>.homeManagerModules.nixvim
+        ];
       };
     };
   };

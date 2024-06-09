@@ -1,6 +1,6 @@
-{configs, ...}: {
+{...}: {
   imports = [
     ./zsh
-    ./nixvim
+    ./nixvim/default.nix
   ];
 }
