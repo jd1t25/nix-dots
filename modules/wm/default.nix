@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
+{...}: {
   imports = [
-	./hyprland
+    ./hyprland
+    ./fonts.nix
   ];
 }

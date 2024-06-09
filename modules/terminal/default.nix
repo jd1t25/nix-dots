@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
+{configs, ...}: {
   imports = [
-	./zsh
+    ./zsh
+    ./nixvim
   ];
 }

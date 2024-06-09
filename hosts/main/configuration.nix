@@ -14,6 +14,7 @@
     ../../pkgs/system.nix
     ../../modules/wm/hyprland
     inputs.home-manager.nixosModules.default
+    ../../modules/nixos
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -97,11 +98,11 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 1w";
+  # };
 
   nix.settings.auto-optimise-store = true;
 

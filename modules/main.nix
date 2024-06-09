@@ -1,8 +1,7 @@
-{ config, ...} :
-{
-	imports = [
-	./terminal
-	./configs
-	./git
-];
+{config, ...}: {
+  imports = [
+    ./terminal
+    ./configs
+    ./git
+  ];
 }

@@ -12,14 +12,15 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
+    # nixvim.url = "github:jd1t25/nixvim/main";
     #nixvim.url = "github:elythh/nixvim";
-    nixvim.url = "github:jd1t25/nixvim/92898eb";
+    # nixvim.url = "github:jd1t25/nixvim/92898eb";
+    # nixvim.url = "git+file:./modules/terminal/nixvim";
 
-    #    nixvim = {
-    #     url = "github:nix-community/nixvim";
-    #     # url = "/home/gaetan/perso/nix/nixvim/nixvim";
-    #     inputs.nixpkgs.follows = "nixpkgs";
-    #   };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -39,7 +40,10 @@
       specialArgs = {inherit inputs;};
       modules = [
         {
-          environment.systemPackages = [alejandra.defaultPackage.${system} inputs.nixvim.packages.${pkgs.system}.default];
+          environment.systemPackages = [
+            alejandra.defaultPackage.${system}
+            inputs.nixvim.packages.${pkgs.system}.default
+          ];
         }
         ./hosts/main
         inputs.home-manager.nixosModules.default
