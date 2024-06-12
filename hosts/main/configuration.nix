@@ -11,23 +11,40 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../pkgs/system.nix
-    ../../modules/wm/hyprland
     inputs.home-manager.nixosModules.default
-    ../../modules/nixos
+
+    # System Packages
+    ../../pkgs/system.nix
+
+    # Hyprland
+    ../../modules/wm/hyprland
+
+    # Fonts
+    ./fonts.nix
+
+    #  NH
+    ./nh.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.efiSupport = true;
-  boot.supportedFilesystems = ["ntfs"];
-  boot.loader.grub.configurationLimit = 10;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
+    };
+  };
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "nodev";
+  # boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.efiSupport = true;
+  # boot.supportedFilesystems = ["ntfs"];
+  # boot.loader.grub.configurationLimit = 10;
 
   networking.hostName = "gan45ha"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -71,7 +88,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  #  programs.zsh.enabled = true;
   programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -87,6 +103,8 @@
     #     wofi
     #   ];
   };
+
+  users.defaultUserShell = pkgs.zsh;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -116,11 +134,16 @@
   #   ntfs3g
   # ];
 
-  environment.variables.EDITOR = "vim";
-  environment.pathsToLink = ["/share/zsh"];
-  environment.extraInit = ''
-    unset -v SSH_ASKPASS
-  '';
+  environment = {
+    variables.EDITOR = "vim";
+    pathsToLink = ["/share/zsh"];
+    extraInit = ''unset -v SSH_ASKPASS '';
+  };
+  # environment.variables.EDITOR = "vim";
+  # environment.pathsToLink = ["/share/zsh"];
+  # environment.extraInit = ''
+  #   unset -v SSH_ASKPASS
+  # '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

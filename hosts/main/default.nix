@@ -1,8 +1,10 @@
-{ config, lib, inputs, ... }:
-
 {
- imports = [
-
-./configuration.nix
- ];
+  config,
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./configuration.nix
+  ];
 }

@@ -1,7 +1,0 @@
-{ configs }:
-
-{
-	imports = [
-./system
-];
-}

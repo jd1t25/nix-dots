@@ -17,17 +17,17 @@
     # nixvim.url = "github:jd1t25/nixvim/92898eb";
     # nixvim.url = "git+file:./modules/terminal/nixvim";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
     alejandra,
-    nixvim,
+    # nixvim,
     ...
   }: let
     username = "jd1t";

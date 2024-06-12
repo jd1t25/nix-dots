@@ -33,5 +33,8 @@
     tofi
     nh
     nvd
+
+    zsh-fast-syntax-highlighting
+    zsh-autosuggestions
   ];
 }

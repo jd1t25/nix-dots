@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     pulsemixer
     kitty
@@ -13,5 +9,7 @@
     grimblast
     chromium
     cliphist
+    mpvpaper
+    gnome.nautilus
   ];
 }

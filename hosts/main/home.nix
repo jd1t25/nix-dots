@@ -5,8 +5,20 @@
     ../../pkgs/home.nix
   ];
 
-  home.username = "jd1t";
-  home.homeDirectory = "/home/jd1t";
+  home = {
+    username = "jd1t";
+    homeDirectory = "/home/jd1t";
+
+    ### DotFiles
+    file."configs" = {
+      target = "$HOME/.config";
+      source = ../../configs;
+      recursive = true;
+    };
+  };
+
+  # home.username = "jd1t";
+  # home.homeDirectory = "/home/jd1t";
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -55,11 +67,11 @@
     usbutils # lsusb
   ];
 
-  home.file."configs" = {
-    target = "$HOME/.config";
-    source = ../../configs;
-    recursive = true;
-  };
+  # home.file."configs" = {
+  #   target = "$HOME/.config";
+  #   source = ../../configs;
+  #   recursive = true;
+  # };
 
   # basic configuration of git, please change to your own
   #  programs.git = {

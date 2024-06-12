@@ -7,7 +7,7 @@
     fira-code
     fira-code-symbols
     mplus-outline-fonts.githubRelease
-    (nerdfonts.override {fonts = ["FiraCode" "CaskadiyaCove" "ComicShannsMono" "CommitMono"];})
+    (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "CommitMono"];})
     martian-mono
   ];
 }
