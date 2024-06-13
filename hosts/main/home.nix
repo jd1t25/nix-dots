@@ -17,6 +17,12 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    configPackages = [pkgs.xdg-desktop-portal-gtk];
+  };
+
   # home.username = "jd1t";
   # home.homeDirectory = "/home/jd1t";
 

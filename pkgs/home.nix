@@ -11,5 +11,12 @@
     cliphist
     mpvpaper
     gnome.nautilus
+    spotdl
+    ytmdl
+    yt-dlp
+    ffmpeg_7-full
+    mpv
+    hyprpicker
+    smplayer
   ];
 }

@@ -6,13 +6,14 @@
   programs.zsh = {
     enable = true;
     dotDir = "$HOME/.config/zsh";
-    # enableCompletion = true;
+    enableCompletion = true;
     history = {
       save = 10000;
       path = "$ZDOTDIR/.zsh_history";
       extended = true;
     };
-    # syntaxHighlighting.enable = true;
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;
     shellAliases = {
       ll = "ls -al";
       "." = "cd ..";
@@ -20,6 +21,8 @@
       pmx = "pulsemixer";
       # v = "nvim";
       v = "nix run 'github:elythh/nixvim'";
+      sng = "sudo nix-collect-garbage -d";
+      ng = "nix-collect-garbage  --delete-old";
     };
     # zplug = {
     #   enable = true;
