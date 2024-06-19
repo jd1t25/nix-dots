@@ -55,6 +55,15 @@
   time.timeZone = "Asia/Kolkata";
   time.hardwareClockInLocalTime = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -114,7 +123,8 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = _: true;
+  # nixpkgs.config.allowUnfreePredicate = _: true;
+  nixpkgs.config.allowUnfreePredicate = pkg: true;
 
   # nix.gc = {
   #   automatic = true;
@@ -138,6 +148,7 @@
     variables.EDITOR = "vim";
     pathsToLink = ["/share/zsh"];
     extraInit = ''unset -v SSH_ASKPASS '';
+    localBinInPath = true;
   };
   # environment.variables.EDITOR = "vim";
   # environment.pathsToLink = ["/share/zsh"];

@@ -4,7 +4,10 @@
   ...
 }: {
   services = {
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      autoNumlock = true;
+    };
     xserver.videoDrivers = ["nvidia"];
     pipewire = {
       enable = true;

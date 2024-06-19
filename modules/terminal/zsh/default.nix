@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  home.sessionPath = [
+    "<Path to my directory>"
+  ];
+
   programs.zsh = {
     enable = true;
     dotDir = "$HOME/.config/zsh";
@@ -17,10 +21,11 @@
     shellAliases = {
       ll = "ls -al";
       "." = "cd ..";
-      rbld = "git add ~/nix-dots/.; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
+      rbld = "git add ~/nix-dots/.; nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
       pmx = "pulsemixer";
+      # rbld = "nix-update";
       # v = "nvim";
-      v = "nix run 'github:elythh/nixvim'";
+      # v = "nix run 'github:elythh/nixvim'";
       sng = "sudo nix-collect-garbage -d";
       ng = "nix-collect-garbage  --delete-old";
     };

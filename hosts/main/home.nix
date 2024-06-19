@@ -8,6 +8,9 @@
   home = {
     username = "jd1t";
     homeDirectory = "/home/jd1t";
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
 
     ### DotFiles
     file."configs" = {

@@ -14,9 +14,12 @@
     spotdl
     ytmdl
     yt-dlp
-    ffmpeg_7-full
+    ffmpeg_7
     mpv
     hyprpicker
     smplayer
+    linux-wifi-hotspot
+    linux-router-without-wifi
+    nix-init
   ];
 }

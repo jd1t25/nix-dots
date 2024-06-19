@@ -12,7 +12,13 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
-    # nixvim.url = "github:jd1t25/nixvim/main";
+    # nixvim.url = "github:nix-community/nixvim";
+    # # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+    # # url = "github:nix-community/nixvim/nixos-24.05";
+    #
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixvim.url = "github:jd1t25/nixvim/main";
     #nixvim.url = "github:elythh/nixvim";
     # nixvim.url = "github:jd1t25/nixvim/92898eb";
     # nixvim.url = "git+file:./modules/terminal/nixvim";
@@ -42,21 +48,25 @@
         {
           environment.systemPackages = [
             alejandra.defaultPackage.${system}
-            # inputs.nixvim.packages.${pkgs.system}.default
+            inputs.nixvim.packages.${pkgs.system}.default
           ];
         }
         ./hosts/main
-        inputs.home-manager.nixosModules.default
+        # inputs.home-manager.nixosModules.default
       ];
     };
 
     homeConfigurations = {
       "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {system = "x86_64-linux";};
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
         extraSpecialArgs = {inherit username inputs;};
         modules = [
           (import ./hosts/main/home.nix)
-          <nixvim>.homeManagerModules.nixvim
+          # inputs.nixvim.homeManagerModules.nixvim
+          # nixvim.homeManagerModules.nixvim
         ];
       };
     };

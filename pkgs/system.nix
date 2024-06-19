@@ -36,5 +36,9 @@
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
+
+    rustc
+    cargo
+    spotify
   ];
 }
