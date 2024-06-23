@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, system,...}: {
   home.packages = with pkgs; [
     pulsemixer
     kitty
@@ -21,5 +21,7 @@
     linux-wifi-hotspot
     linux-router-without-wifi
     nix-init
+    nix-update
+inputs.nixvim.packages.${pkgs.system}.default
   ];
 }

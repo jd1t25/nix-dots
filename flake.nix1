@@ -1,4 +1,5 @@
-{ description = "Jd1t's NixOS";
+{
+  description = "Jd1t's NixOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -6,13 +7,12 @@
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
-   };
+    };
 
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
- #  nixvim.url = "github:nix-community/nixvim";
-    nixvim.url = "github:jd1t25/nixvim/2269ca3";
+    nixvim.url = "github:jd1t25/nixvim/fefa6f0";
   };
 
   outputs = inputs @ {

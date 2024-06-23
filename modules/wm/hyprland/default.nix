@@ -42,12 +42,27 @@
   nixpkgs.config.allowUnfree = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+
+  hardware = {
+    # opengl = {
+    #   enable = true;
+    # };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
+  # hardware.opengl = {
+  #   enable = true;
+  #   #driSupport = true;
+  #   # driSupport32Bit = true;
+  # };
+  #
+  # hardware.graphics = {
+  #   enable = true;
+  #   enable32Bit = true;
+  # };
   sound.enable = true;
 
   nixpkgs = {

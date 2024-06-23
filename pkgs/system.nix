@@ -33,6 +33,9 @@
     tofi
     nh
     nvd
+    iw
+    hostapd
+    haveged
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
@@ -40,5 +43,8 @@
     rustc
     cargo
     spotify
+
+    pulseaudio
+    bat
   ];
 }
