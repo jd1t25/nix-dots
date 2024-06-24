@@ -27,6 +27,10 @@ _: {
       ng = "nix-collect-garbage  --delete-old";
 
       zrc = "nvim ~/nix-dots/modules/terminal/zsh/default.nix";
+
+      ndc = "nvim ~/nix-dots";
+      nxc = "nvim ~/nixvim";
+      hrc = "nvim ~/.config/hypr/hyprland.conf";
     };
     # zplug = {
     #   enable = true;

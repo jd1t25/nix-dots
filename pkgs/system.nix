@@ -46,5 +46,8 @@
 
     pulseaudio
     bat
+    nil
+
+    (python312.withPackages (ps: with ps; [pandas requests pip flask]))
   ];
 }
