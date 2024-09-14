@@ -10,7 +10,7 @@
     chromium
     cliphist
     mpvpaper
-    gnome.nautilus
+    nautilus
     spotdl
     ytmdl
     yt-dlp
@@ -22,6 +22,6 @@
     linux-router-without-wifi
     nix-init
     nix-update
-inputs.nixvim.packages.${pkgs.system}.default
+#inputs.nixvim.packages.${pkgs.system}.default
   ];
 }

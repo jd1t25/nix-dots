@@ -1,58 +1,50 @@
-{ description = "Jd1t's NixOS";
+{
+  description = "Jd1t's Nixos Config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-   };
+     home-manager = {
+       url = "github:nix-community/home-manager";
+       inputs.nixpkgs.follows = "nixpkgs";
+     };
 
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
+     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
- #  nixvim.url = "github:nix-community/nixvim";
-    nixvim.url = "github:jd1t25/nixvim/07a77eb";
+#	nixvim.url = "github:jd1t25/nixvim";
+	nixvim.url = "github:jd1t25/nixvim?ref=main";
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    alejandra,
-    nixvim,
-    ...
-  }: let
-    username = "jd1t";
-    hostname = "gan45ha";
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    formatter.${system} = pkgs.alejandra;
-    nixosConfigurations."gan45ha" = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, ... }@inputs:
+  let 
+	username = "jd1t";
+	hostname = "gan45ha";
+	system = "x86_64-linux";
+	pkgs = nixpkgs.legacyPackages.${system};
+in {
+    formatter.${system} = pkgs.inputs.alejandra;
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        {
-          environment.systemPackages = [
-            alejandra.defaultPackage.${system}
-          ];
-        }
-        ./hosts/main
+        ./hosts/main/configuration.nix
         inputs.home-manager.nixosModules.default
+	{
+		environment.systemPackages = [ inputs.alejandra.defaultPackage.${system} inputs.nixvim.packages.${pkgs.system}.default];
+	}
       ];
     };
 
-    homeConfigurations = {
-      "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-        extraSpecialArgs = {inherit username inputs;};
-        modules = [
-          (import ./hosts/main/home.nix)
-
-        ];
-      };
-    };
-  };
+  homeConfigurations = {
+	"${username}@${hostname}" = inputs.home-manager.lib.homeManagerConfiguration {
+	pkgs = import nixpkgs {
+		system = "${system}";
+	};
+	extraSpecialArgs = { inherit username inputs; };
+	modules = [
+		(import ./hosts/main/home.nix)
+	];
+};
+};
+};
 }

@@ -7,6 +7,7 @@
     displayManager.sddm = {
       enable = true;
       autoNumlock = true;
+	wayland.enable = true;
     };
     xserver.videoDrivers = ["nvidia"];
     pipewire = {
@@ -39,7 +40,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfree = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
@@ -63,15 +64,15 @@
   #   enable = true;
   #   enable32Bit = true;
   # };
-  sound.enable = true;
+  #sound.enable = true;
 
-  nixpkgs = {
-    overlays = [
-      (self: super: {
-        waybar = super.waybar.overrideAttrs (oldAttrs: {
-          mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true" "-Dmpd=enabled"];
-        });
-      })
-    ];
-  };
+ # nixpkgs = {
+ #   overlays = [
+ #     (self: super: {
+ #       waybar = super.waybar.overrideAttrs (oldAttrs: {
+ #         mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true" "-Dmpd=enabled"];
+ #       });
+ #     })
+ #   ];
+ # };
 }
