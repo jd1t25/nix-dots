@@ -1,6 +1,6 @@
 {
   imports = [
     ./terminal
-    ./git
+    # ./git
   ];
 }

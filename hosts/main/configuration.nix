@@ -1,39 +1,43 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/git/default.nix
+    inputs.home-manager.nixosModules.default
 
-      # System Packages
-	../../pkgs/system.nix
+    # System Packages
+    ../../pkgs/system.nix
 
-	# Hyprland
-	../../modules/wm/hyprland
+    # Hyprland
+    ../../modules/wm/hyprland
 
-	# Fonts
-	./fonts.nix
+    # Fonts
+    ./fonts.nix
 
-	# NH
-	./nh.nix
-	
-	# Services
-	../../services/default.nix
-    ];
+    # NH
+    ./nh.nix
+
+    # Services
+    ../../services/default.nix
+  ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   home-manager = {
-	extraSpecialArgs = {inherit inputs; };
-	users = {
-		"jd1t" = import ./home.nix;
-	};
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "jd1t" = import ./home.nix;
+    };
   };
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "nodev" ];
+  boot.loader.grub.devices = ["nodev"];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -47,6 +51,14 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Enable Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  };
+
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -105,11 +117,15 @@
   users.users.jd1t = {
     isNormalUser = true;
     description = "jd1t";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
+
+  # Install Zsh
+  programs.zsh.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -123,7 +139,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
-    neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -152,5 +167,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

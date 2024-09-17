@@ -36,12 +36,14 @@
     iw
     hostapd
     haveged
+    jq
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
 
     rustc
     cargo
+    gnumake
     spotify
 
     pulseaudio
