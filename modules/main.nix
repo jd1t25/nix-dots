@@ -1,6 +1,7 @@
 {
   imports = [
     ./terminal
+    ./browsers
     # ./git
   ];
 }

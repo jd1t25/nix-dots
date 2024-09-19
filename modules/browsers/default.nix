@@ -1,5 +1,5 @@
-{ ... }: {
+_: {
   imports = [
-    ./zsh
+    ./brave.nix
   ];
 }

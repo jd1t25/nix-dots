@@ -1,4 +1,4 @@
-{configs, pkgs, ...}: {
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
@@ -18,7 +18,7 @@
     # };
   };
 
- # programs.git-credential-oauth = {
- # enable = true;
- # };
+  # programs.git-credential-oauth = {
+  # enable = true;
+  # };
 }

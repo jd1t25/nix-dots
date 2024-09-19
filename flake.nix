@@ -14,6 +14,7 @@
 
     #nixvim.url = "github:jd1t25/nixvim";
     nixvim.url = "github:jd1t25/nixvimtemp";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

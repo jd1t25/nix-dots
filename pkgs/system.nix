@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     git
     curl
@@ -26,7 +26,7 @@
     vim
     wl-clipboard
     wofi-emoji
-    brave
+    #brave
     libnotify
     eww
     mako
@@ -50,6 +50,6 @@
     bat
     nil
 
-    (python312.withPackages (ps: with ps; [pandas requests pip flask]))
+    (python312.withPackages (ps: with ps; [ pandas requests pip flask ]))
   ];
 }

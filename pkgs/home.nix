@@ -1,4 +1,4 @@
-{pkgs, inputs, system,...}: {
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     pulsemixer
     kitty
@@ -7,7 +7,7 @@
     telegram-desktop
     playerctl
     grimblast
-    chromium
+    #chromium
     cliphist
     mpvpaper
     nautilus
@@ -23,5 +23,6 @@
     nix-init
     nix-update
     inputs.nixvim.packages.${pkgs.system}.default
+    floorp
   ];
 }
