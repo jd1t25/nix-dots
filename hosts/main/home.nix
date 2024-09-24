@@ -13,11 +13,11 @@
     ];
 
     ### DotFiles
-   # file."configs" = {
-   #   target = "$HOME/.config";
-   #   source = ../../configs;
-   #   recursive = true;
-   # };
+    # file."configs" = {
+    #   target = "$HOME/.config";
+    #   source = ../../configs;
+    #   recursive = true;
+    # };
   };
 
   xdg.portal = {

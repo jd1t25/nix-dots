@@ -1,4 +1,4 @@
-_: {
+{
   home.sessionPath = [
     "$HOME/bin"
   ];
@@ -17,8 +17,8 @@ _: {
     shellAliases = {
       ll = "ls -al";
       "." = "cd ..";
-      # rbld = "git add ~/nix-dots/.; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
-      rbld = "nix-update";
+      rbld = "git add ~/nix-dots/.; sudo nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
+      # rbld = "nix-update";
       pmx = "pulsemixer";
       # rbld = "nix-update";
       v = "nvim";
@@ -29,7 +29,7 @@ _: {
       zrc = "nvim ~/nix-dots/modules/terminal/zsh/default.nix";
 
       ndc = "nvim ~/nix-dots";
-      nxc = "nvim ~/nixvim";
+      # nxc = "nvim ~/nixvim";
       hrc = "nvim ~/.config/hypr/hyprland.conf";
     };
     # zplug = {

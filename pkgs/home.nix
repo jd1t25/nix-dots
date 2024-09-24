@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     pulsemixer
     kitty
@@ -9,7 +13,7 @@
     grimblast
     #chromium
     cliphist
-    mpvpaper
+    #mpvpaper
     nautilus
     spotdl
     ytmdl
@@ -24,5 +28,7 @@
     nix-update
     inputs.nixvim.packages.${pkgs.system}.default
     floorp
+    qbittorrent-enhanced
+    eza
   ];
 }

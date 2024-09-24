@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     git
     curl
@@ -50,6 +50,9 @@
     bat
     nil
 
-    (python312.withPackages (ps: with ps; [ pandas requests pip flask ]))
+    (python312.withPackages (ps: with ps; [pandas requests pip flask]))
+
+    mpvpaper
+    yt-dlp
   ];
 }
