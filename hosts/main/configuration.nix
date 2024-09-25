@@ -22,8 +22,11 @@
     # NH
     ./nh.nix
 
+    # Environment Variable
+    ./envVar.nix
+
     # Services
-    ../../services/default.nix
+    # ../../services/default.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -119,10 +122,18 @@
     description = "jd1t";
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    # packages = with pkgs; [
+    #   #  thunderbird
+    # ];
   };
+
+  security.sudo.extraRules = [
+    {
+      groups = ["wheel"];
+      commands = ["/home/jd1t/bin/*"];
+    }
+    # { groups = [ "wheel" ]; commands = [ "/bin/light" ]; }
+  ];
 
   # Install Zsh
   programs.zsh.enable = true;

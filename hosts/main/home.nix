@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/main.nix
-    ./envVar.nix
+    ./envSession.nix
     ../../pkgs/home.nix
   ];
 
