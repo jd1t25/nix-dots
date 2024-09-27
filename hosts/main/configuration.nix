@@ -130,7 +130,7 @@
   security.sudo.extraRules = [
     {
       groups = ["wheel"];
-      commands = ["/home/jd1t/bin/*"];
+      commands = ["/home/jd1t/bin/hotspot"];
     }
     # { groups = [ "wheel" ]; commands = [ "/bin/light" ]; }
   ];

@@ -26,6 +26,7 @@
     vim
     wl-clipboard
     wofi-emoji
+    btop
     #brave
     libnotify
     eww
@@ -45,6 +46,7 @@
     cargo
     gnumake
     spotify
+    direnv
 
     pulseaudio
     bat
@@ -54,5 +56,7 @@
 
     mpvpaper
     yt-dlp
+    obsidian
+    yazi
   ];
 }

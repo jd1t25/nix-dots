@@ -30,5 +30,6 @@
     floorp
     qbittorrent-enhanced
     eza
+    teams-for-linux
   ];
 }

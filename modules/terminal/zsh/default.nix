@@ -14,24 +14,26 @@
     };
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
-    shellAliases = {
-      ll = "ls -al";
-      "." = "cd ..";
-      rbld = "git add ~/nix-dots/.; sudo nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
-      # rbld = "nix-update";
-      pmx = "pulsemixer";
-      # rbld = "nix-update";
-      v = "nvim";
-      # v = "nix run 'github:elythh/nixvim'";
-      sng = "sudo nix-collect-garbage -d";
-      ng = "nix-collect-garbage  --delete-old";
-
-      zrc = "nvim ~/nix-dots/modules/terminal/zsh/default.nix";
-
-      ndc = "nvim ~/nix-dots";
-      # nxc = "nvim ~/nixvim";
-      hrc = "nvim ~/.config/hypr/hyprland.conf";
-    };
+    # shellAliases = {
+    #   ll = "ls -al";
+    #   "." = "cd ..";
+    #   rbld = "git add ~/nix-dots/.; sudo nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
+    #   # rbld = "nix-update";
+    #   pmx = "pulsemixer";
+    #   # rbld = "nix-update";
+    #   v = "nvim";
+    #   # v = "nix run 'github:elythh/nixvim'";
+    #   sng = "sudo nix-collect-garbage -d";
+    #   ng = "nix-collect-garbage  --delete-old";
+    #
+    #   zrc = "nvim ~/nix-dots/modules/terminal/zsh/default.nix";
+    #
+    #   ndc = "nvim ~/nix-dots";
+    #   # nxc = "nvim ~/nixvim";
+    #   hrc = "nvim ~/.config/hypr/hyprland.conf";
+    #   nd = "nix develop path:$(pwd)";
+    #   nus = "nixupdateswitch.sh";
+    # };
     # zplug = {
     #   enable = true;
     #   plugins = [
@@ -65,7 +67,12 @@
       theme = "robbyrussell";
       plugins = [
         # "git"
+        "direnv"
       ];
     };
+    initExtra = "
+    source ${./alias.zsh}
+    source ${./functions.zsh}
+      ";
   };
 }
