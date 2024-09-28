@@ -58,5 +58,6 @@
     yt-dlp
     obsidian
     yazi
+    chromium
   ];
 }
