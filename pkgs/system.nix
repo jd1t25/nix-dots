@@ -59,5 +59,6 @@
     obsidian
     yazi
     chromium
+    nix-prefetch-github
   ];
 }

@@ -31,5 +31,7 @@
     qbittorrent-enhanced
     eza
     teams-for-linux
+    localsend
+    pnpm
   ];
 }
