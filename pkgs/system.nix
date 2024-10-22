@@ -52,7 +52,8 @@
     bat
     nil
 
-    (python312.withPackages (ps: with ps; [pandas requests pip flask]))
+    (python312.withPackages (ps: with ps; [pandas requests pip flask debugpy isort]))
+    vimPlugins.friendly-snippets
 
     mpvpaper
     yt-dlp
@@ -60,5 +61,8 @@
     yazi
     chromium
     nix-prefetch-github
+    fira-code-nerdfont
+    commit-mono
+    go-mtpfs
   ];
 }

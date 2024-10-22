@@ -13,7 +13,7 @@
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
     #nixvim.url = "github:jd1t25/nixvim";
-    nixvim.url = "github:jd1t25/nixvim";
+    nixvim.url = "path:./nvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 

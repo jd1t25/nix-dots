@@ -32,6 +32,7 @@
     eza
     teams-for-linux
     localsend
-    pnpm
+    live-server
+    whatsapp-for-linux
   ];
 }
