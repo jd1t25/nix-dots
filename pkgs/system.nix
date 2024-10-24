@@ -64,5 +64,8 @@
     fira-code-nerdfont
     commit-mono
     go-mtpfs
+    libgcc
+    gcc
+    zoxide
   ];
 }

@@ -33,7 +33,9 @@
     # Enable modesetting for Wayland compositors (hyprland)
     modesetting.enable = true;
     # Use the open source version of the kernel module (for driver 515.43.04+)
-    open = true;
+    open = false;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
     # Enable the Nvidia settings menu
     nvidiaSettings = true;
     # Select the appropriate driver version for your specific GPU
