@@ -75,4 +75,9 @@
     source ${./functions.zsh}
       ";
   };
+
+  programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 }

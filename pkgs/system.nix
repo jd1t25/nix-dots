@@ -67,7 +67,6 @@
     go-mtpfs
     libgcc
     gcc
-    zoxide
     linux-router
   ];
 }

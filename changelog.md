@@ -4,3 +4,4 @@
 -- Removed Display Manager
 -- Restructure Whole Dotfiles
 -- Added Hotspot Systemd Script
+-- Added Zoxide to zsh.nix
