@@ -51,6 +51,7 @@
     pulseaudio
     bat
     nil
+    at
 
     (python312.withPackages (ps: with ps; [pandas requests pip flask debugpy isort]))
     vimPlugins.friendly-snippets

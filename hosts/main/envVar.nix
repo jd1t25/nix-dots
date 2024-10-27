@@ -1,3 +1,4 @@
 _: {
-  environment.variables = {};
+  environment.variables = {
+    };
 }

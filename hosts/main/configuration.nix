@@ -13,6 +13,9 @@
     # System Packages
     ../../pkgs/system.nix
 
+    # System 
+    ../../modules/system
+
     # Hyprland
     ../../modules/wm/hyprland
 

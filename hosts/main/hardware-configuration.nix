@@ -19,23 +19,23 @@
   boot.supportedFilesystems = ["ntfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/73312fc0-5f02-43d3-a0fb-d8e32ad1f734";
+    device = "/dev/disk/by-uuid/11e247e1-5779-4077-b74c-70c7a985790f";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4CF8-8E0B";
+    device = "/dev/disk/by-uuid/E765-D7F7";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/344e66fd-3152-4c56-ade4-c10c9a31adcf";
+    device = "/dev/disk/by-uuid/12d8bde5-9b4b-451f-95cf-ff66ee8de9a5";
     fsType = "ext4";
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/f934b1ee-4d78-44cd-ad24-e7ab7e8e37f6";}
+    {device = "/dev/disk/by-uuid/44b4c669-40d5-400b-8fcf-bf6815dbedfa";}
   ];
 
   fileSystems."/mnt/win1" = {

@@ -4,11 +4,11 @@
   ...
 }: {
   services = {
-    displayManager.sddm = {
-      enable = true;
-      autoNumlock = true;
-	wayland.enable = true;
-    };
+	#    displayManager.sddm = {
+	#      enable = true;
+	#      autoNumlock = true;
+	# wayland.enable = true;
+	#    };
     xserver.videoDrivers = ["nvidia"];
     pipewire = {
       enable = true;
@@ -29,32 +29,32 @@
     #xdg.configFile.hypr = { source = ../../../configs/ }
   };
 
-  hardware.nvidia = {
-    # Enable modesetting for Wayland compositors (hyprland)
-    modesetting.enable = true;
-    # Use the open source version of the kernel module (for driver 515.43.04+)
-    open = false;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    # Enable the Nvidia settings menu
-    nvidiaSettings = true;
-    # Select the appropriate driver version for your specific GPU
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
+  # hardware.nvidia = {
+  #   # Enable modesetting for Wayland compositors (hyprland)
+  #   modesetting.enable = true;
+  #   # Use the open source version of the kernel module (for driver 515.43.04+)
+  #   open = false;
+  #   powerManagement.enable = false;
+  #   powerManagement.finegrained = false;
+  #   # Enable the Nvidia settings menu
+  #   nvidiaSettings = true;
+  #   # Select the appropriate driver version for your specific GPU
+  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
+  # };
 
   #nixpkgs.config.allowUnfree = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  hardware = {
-    # opengl = {
-    #   enable = true;
-    # };
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-  };
+  # hardware = {
+  #   # opengl = {
+  #   #   enable = true;
+  #   # };
+  #   graphics = {
+  #     enable = true;
+  #     enable32Bit = true;
+  #   };
+  # };
 
   # hardware.opengl = {
   #   enable = true;
