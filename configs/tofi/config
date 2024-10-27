@@ -12,7 +12,7 @@ padding-left = 35%
 padding-top = 20%
 result-spacing = 25
 num-results = 10
-# font = monospace
+font = /nix/store/hmrgb2b9hch9bg1h4m1fphk5jiahdkpd-mona-sans-1.0.1/share/fonts/truetype/MonaSans-SemiBold.ttf
 # background-color = #000A
 background-color = #000B
 
@@ -155,7 +155,7 @@ background-color = #000B
 # ### Text layout
 # #
 # 	# Prompt to display.
-# 	prompt-text = "run: "
+	prompt-text = "$ "
 #
 # 	# Extra horizontal padding between prompt and input.
 # 	prompt-padding = 0
@@ -252,7 +252,7 @@ background-color = #000B
 # 	hide-cursor = false
 #
 # 	# Show a text cursor in the input field.
-# 	text-cursor = false
+	text-cursor = true
 #
 # 	# Sort results by number of usages in run and drun modes.
 # 	history = true
