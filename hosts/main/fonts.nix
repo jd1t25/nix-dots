@@ -9,5 +9,8 @@
     mplus-outline-fonts.githubRelease
     (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "CommitMono"];})
     martian-mono
+    mona-sans
+    azeret-mono
+    work-sans
   ];
 }
