@@ -22,8 +22,6 @@
     mpv
     hyprpicker
     smplayer
-    linux-wifi-hotspot
-    linux-router-without-wifi
     nix-init
     nix-update
     inputs.nixvim.packages.${pkgs.system}.default

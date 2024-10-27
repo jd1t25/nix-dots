@@ -68,5 +68,6 @@
     libgcc
     gcc
     zoxide
+    linux-router
   ];
 }

@@ -1,5 +1,5 @@
 _ : {
   imports = [
-    ./video
+    ./hotspot.nix
   ];
 }

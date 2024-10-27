@@ -14,10 +14,10 @@
     ../../pkgs/system.nix
 
     # System 
-    ../../modules/system
+    # ../../modules/system
 
     # Hyprland
-    ../../modules/wm/hyprland
+    # ../../modules/wm/hyprland
 
     # Fonts
     ./fonts.nix
@@ -29,7 +29,11 @@
     ./envVar.nix
 
     # Services
+    # ../../modules/services
     # ../../services/default.nix
+
+    # All system services
+    ../../modules/system.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
