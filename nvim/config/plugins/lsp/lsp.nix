@@ -11,7 +11,7 @@
         basedpyright.enable = true;
         bashls.enable = true;
         clangd.enable = true;
-        nil_ls.enable = true;
+        nil_ls.enable = false;
         html.enable = true;
       };
       keymaps = {

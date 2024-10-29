@@ -1,7 +1,7 @@
 {
   plugins.telescope = {
     enable = true;
-    extensions.fzf-native.enable = true;
+    extensions.fzy-native.enable = true;
     # enabledExtensions = [
     #   "fzf-native"
     # ];
@@ -32,21 +32,21 @@
       "<leader>fh" = {
         action = "help_tags";
         options = {
-          desc = "[F]ind [H]elp";
+          desc = "Telscope [F]ind [H]elp Tags";
         };
       };
 
       "<leader>fk" = {
         action = "keymaps";
         options = {
-          desc = "[F]ind [K]eymaps";
+          desc = "Telescope [F]ind [K]eymaps";
         };
       };
 
       "<leader>ff" = {
         action = "find_files";
         options = {
-          desc = "[F]ind [F]iles";
+          desc = "Telescope [F]ind [F]iles";
         };
       };
 
@@ -60,21 +60,21 @@
       "<leader>fc" = {
         action = "grep_string";
         options = {
-          desc = "[F]ind [C]urrent Word";
+          desc = "Telescope [F]ind [C]urrent Word";
         };
       };
 
       "<leader>fg" = {
         action = "live_grep";
         options = {
-          desc = "[F]ind by [G]rep";
+          desc = "Telescope [F]ind by [G]rep";
         };
       };
 
       "<leader>fd" = {
         action = "diagnostics";
         options = {
-          desc = "[F]ind [D]iagnostics";
+          desc = "Telescope [F]ind [D]iagnostics";
         };
       };
 
@@ -95,7 +95,7 @@
       "<leader><leader>" = {
         action = "buffers";
         options = {
-          desc = "[ ] Find existing buffers";
+          desc = "Telescope [ ] Find existing buffers";
         };
       };
     };

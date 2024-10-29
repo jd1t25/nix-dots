@@ -5,14 +5,16 @@
 
   systemd.services.hotspot = {
     description = "Start Hotspot after window manager";
-    after = ["graphical.target"];
-    wants = ["graphical.target"];
+    after = ["network.target"];
     # path = ["/home/jd1t/.nix-profile/bin/lnxrouter"];
     serviceConfig = {
-      ExecStart = "${pkgs.zsh}/bin/zsh /home/jd1t/nix-dots/bin/hotspot";
+      User = "root";
+      Group = "root";
+      ExecStart = "${pkgs.linux-router}/bin/lnxrouter --ap wlo1 \"Go Go Router Rangers\" -p \"Qwerty?123\" ";
       Type = "simple";
     };
-    wantedBy = ["default.target"];
+    path = [ pkgs.util-linux ];
+    wantedBy = ["multi-user.target"];
   };
 }
 

@@ -16,3 +16,5 @@ alias nus="nixupdateswitch.sh";
 alias alx="nvim ~/nix-dots/modules/terminal/zsh/alias.zsh"
 alias spkgs="nvim ~/nix-dots/pkgs/system.nix"
 alias hpkgs="nvim ~/nix-dots/pkgs/home.nix"
+alias hx="Hyprland"
+alias btop="btop --utf-force"

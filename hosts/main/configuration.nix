@@ -43,6 +43,7 @@
     users = {
       "jd1t" = import ./home.nix;
     };
+    backupFileExtension = "backup";
   };
 
   # Bootloader.
@@ -162,6 +163,10 @@
   nixpkgs.config.packageOverrides = pkgs: {
     mpvpaper = pkgs.callPackage ../../custompkgs/mpvpaper/default.nix {};
   };
+
+  # Zshrc
+  system.userActivationScripts.zshrc = "touch .zshrc";
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

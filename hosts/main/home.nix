@@ -5,11 +5,15 @@
     ../../pkgs/home.nix
   ];
 
+  #Numlock
+  xsession.numlock.enable = true;
+
   home = {
     username = "jd1t";
     homeDirectory = "/home/jd1t";
     sessionPath = [
       "$HOME/.local/bin"
+      "$HOME/bin"
     ];
 
     ### DotFiles
@@ -19,6 +23,7 @@
     #   recursive = true;
     # };
   };
+
 
   xdg.portal = {
     enable = true;

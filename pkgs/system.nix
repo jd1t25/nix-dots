@@ -53,7 +53,7 @@
     nil
     at
 
-    (python312.withPackages (ps: with ps; [pandas requests pip flask debugpy isort]))
+    (python312.withPackages (ps: with ps; [pandas requests pip flask debugpy isort beautifulsoup4]))
     vimPlugins.friendly-snippets
 
     mpvpaper
@@ -68,5 +68,14 @@
     libgcc
     gcc
     linux-router
+
+    chafa
+    thefuck
+    eza
+    nurl
+    discord
+    ruff
+    prettierd
+    nixfmt-rfc-style
   ];
 }

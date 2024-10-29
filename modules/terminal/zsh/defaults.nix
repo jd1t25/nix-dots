@@ -1,26 +1,25 @@
-{pkgs, ...}:{
+{
   # home.sessionPath = [
   #   "$HOME/bin"
   # ];
 
   programs.zsh = {
     enable = true;
-    dotDir = "$HOME/.config/zsh";
+    # dotDir = "$HOME/.config/zsh";
     enableCompletion = true;
-    autocd = true;
-    # histSize = 10000;
-    # histFile = "$HOME/.zsh_history";
-    history = {
-      save = 10000;
-      path = "$ZDOTDIR/.zsh_history";
-      extended = true;
-    };
+    histSize = 10000;
+    histFile = "$HOME/.zsh_history";
+    # history = {
+    #   save = 10000;
+    #   path = "$ZDOTDIR/.zsh_history";
+    #   extended = true;
+    # };
     syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;
-    # enableLsColors = true;
-    # setOptions = [
-    #   "PROMPT_SUBST"
-    # ];
+    autosuggestions.enable = true;
+    enableLsColors = true;
+    setOptions = [
+      "PROMPT_SUBST"
+    ];
     # promptInit = ''
     #   kitty +kitten icat --place 10x10@0x0 --scale-up Downloads/1.gif
     #   PROMPT="
@@ -40,7 +39,7 @@
       # printf "\n$ "
       # printf "\n$ "
       # PS1=\n\n\n
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       theme = "robbyrussell";
       plugins = [
@@ -48,30 +47,10 @@
         "direnv"
       ];
     };
-    # plugins = with pkgs; [
-    #   {
-    #     name = "zsh-autopair";
-    #     src = fetchFromGitHub {
-    #       owner = "hlissner";
-    #       repo = "zsh-autopair";
-    #       rev = "449a7c3d095bc8f3d78cf37b9549f8bb4c383f3d";
-    #       hash = "sha256-3zvOgIi+q7+sTXrT+r/4v98qjeiEL4Wh64rxBYnwJvQ=";
-    #     };
-    #     file = "autopair.zsh";
-    #   }
-    # ];
-    initExtra = ''
-      source ${./alias.zsh}
-      source ${./functions.zsh}
-      eval $(thefuck --alias)
-
-      if [[ ! -d $ZDOTDIR/.zsh-autopair ]]; then
-        git clone https://github.com/hlissner/zsh-autopair $ZDOTDIR/.zsh-autopair
-      fi
-
-      source $ZDOTDIR/.zsh-autopair/autopair.zsh
-      autopair-init
-    '';
+    shellInit = "
+    source ${./alias.zsh}
+    source ${./functions.zsh}
+      ";
     # shellAliases = {
     #   ll = "ls -al";
     #   "." = "cd ..";
@@ -122,11 +101,8 @@
     # };
   };
 
-  programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-  # Prevent the new user dialog in zsh
-  # system.userActivationScripts.zshrc = "touch .zshrc";
+  # programs.zoxide = {
+  #     enable = true;
+  #     enableZshIntegration = true;
+  #   };
 }

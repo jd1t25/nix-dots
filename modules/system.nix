@@ -3,5 +3,6 @@ _ : {
     ./systemd
     ./services
     ./wm/hyprland
+    # ./terminal
   ];
 }
