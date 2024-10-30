@@ -18,3 +18,5 @@
 
 30-10-2024
 -- Added Multiple Mini Mes Nvim Plugins
+-- Added None-Ls
+-- Added Git Nix Aliases

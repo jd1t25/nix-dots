@@ -12,7 +12,7 @@
         event = "TextYankPost";
         pattern = "*";
         desc = "Highlight when yanking (copying) text";
-        command = "lua vim.highlight.on_yank{timeout=500}";
+        command = "lua vim.highlight.on_yank{timeout=50}";
       }
       {
         event = "FileType";

@@ -1,6 +1,5 @@
 {
-  plugins = 
-  {
+  plugins = {
     lsp-format = {
       enable = true;
     };
@@ -13,6 +12,7 @@
         clangd.enable = true;
         nil_ls.enable = false;
         html.enable = true;
+        ruff.enable = true;
       };
       keymaps = {
         silent = true;
@@ -64,28 +64,30 @@
             desc = "Previous Diagnostic";
           };
         };
-      };};};
-  extraConfigLua = ''
-    local _border = "rounded"
-
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, {
-        border = _border
-        }
-        )
-
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, {
-        border = _border
-        }
-        )
-
-    vim.diagnostic.config{
-      float={border=_border}
+      };
     };
+  };
+  extraConfigLua = ''
+      local _border = "rounded"
 
-  require('lspconfig.ui.windows').default_options = {
-    border = _border
-  }
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+          vim.lsp.handlers.hover, {
+          border = _border
+          }
+          )
+
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+          vim.lsp.handlers.signature_help, {
+          border = _border
+          }
+          )
+
+      vim.diagnostic.config{
+        float={border=_border}
+      };
+
+    require('lspconfig.ui.windows').default_options = {
+      border = _border
+    }
   '';
 }
