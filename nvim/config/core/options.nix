@@ -1,8 +1,38 @@
+{ pkgs, ... }:
 {
   config = {
+    performance = {
+      byteCompileLua = {
+        enable = true;
+        nvimRuntime = true;
+        configs = true;
+        plugins = true;
+      };
+    };
+    clipboard = {
+      # Use system clipboard
+      register = "unnamedplus";
+
+      providers = {
+        wl-copy = {
+          enable = true;
+          package = pkgs.wl-clipboard;
+        };
+      };
+    };
+    diagnostics = {
+      update_in_insert = true;
+      severity_sort = true;
+      float = {
+        border = "rounded";
+      };
+      jump = {
+        severity.__raw = "vim.diagnostic.severity.WARN";
+      };
+    };
     opts = {
       breakindent = true; # Enable smart indenting
-      clipboard = "unnamedplus"; # Sets the register to use for the clipboard.
+      # clipboard = "unnamedplus"; # Sets the register to use for the clipboard.
 
       # Enable relative line numbers
       number = true;
@@ -46,14 +76,17 @@
       updatetime = 250; # faster completion (4000ms default)
 
       # Set completeopt to have a better completion experience
-      completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
+      completeopt = [
+        "menuone"
+        "noselect"
+        "noinsert"
+      ]; # mostly just for cmp
 
       # Enable persistent undo history
       swapfile = false;
+      autoread = true;
       backup = false;
       undofile = true;
-
-
 
       # Enable 24-bit colors
       termguicolors = true;

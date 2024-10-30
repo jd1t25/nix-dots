@@ -11,7 +11,10 @@
 -- IMP: Added Blur Layer to Tofi (Blur goes brrr)
 
 29-10-2024
--- Added Hop Keymaps 
+-- Added Hop Keymaps
 -- Added numlock at startup
 -- Added More black background to nvim
 -- Added TS-objects, Conform and Fidget to nvim
+
+30-10-2024
+-- Added Multiple Mini Mes Nvim Plugins

@@ -1,27 +1,27 @@
 {
   config = {
-    autoGroups = {
-      highlight-yank = {
-        clear = true; # Clear previous definitions
-      };
-    };
+    # autoGroups = {
+    #   highlight-yank = {
+    #     clear = true; # Clear previous definitions
+    #   };
+    # };
 
     autoCmd = [
-    {
-    group = "highlight-yank";
-    event = ["BufEnter" "BufWinEnter"];
-    pattern = "*";
-    desc = "Highlight when yanking (copying) text";
-    callback = { 
-      __raw = "function()
-              vim.highlight.on_yank()
-              end";
-      };
-    }
+      {
+        # group = "highlight-yank";
+        event = "TextYankPost";
+        pattern = "*";
+        desc = "Highlight when yanking (copying) text";
+        command = "lua vim.highlight.on_yank{timeout=500}";
+      }
+      {
+        event = "FileType";
+        pattern = "help";
+        command = "wincmd F1";
+      }
     ];
   };
 }
-
 
 #{
 #    highlight-yank = {

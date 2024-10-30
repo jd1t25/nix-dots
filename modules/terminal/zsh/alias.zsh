@@ -1,6 +1,6 @@
 alias ll="ls -al";
 alias .="cd ..";
-alias rbld="git add ~/nix-dots/.; sudo nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
+alias rbld="cd ~/nix-dots; git add ~/nix-dots/.; sudo nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
 # rbld = "nix-update";
 alias pmx="pulsemixer";
 # rbld = "nix-update";

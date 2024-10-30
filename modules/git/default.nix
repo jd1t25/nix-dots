@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
@@ -10,12 +11,12 @@
     #     }/bin/git-credential-libsecret";
     # };
     config.credential.helper = "libsecret";
-    # aliases = {
-    #   ga = "add";
-    #   gci = "commit";
-    #   gco = "checkout";
-    #   gs = "status";
-    # };
+    aliases = {
+      ga = "add";
+      gci = "commit";
+      gco = "checkout";
+      gs = "status";
+    };
   };
 
   # programs.git-credential-oauth = {

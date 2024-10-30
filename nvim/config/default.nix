@@ -2,7 +2,8 @@
   # config,
   # lib,
   ...
-}: {
+}:
+{
   imports = [
     ./plugins/sleuth.nix
     ./plugins/telescope.nix
@@ -14,6 +15,8 @@
     ./plugins/gitsigns.nix
     ./plugins/conform.nix
     ./plugins/fidget.nix
+    # ./plugins/nvimtree.nix
+    ./plugins/mini.nix
 
     ./core/options.nix
     ./core/autocmd.nix
@@ -23,6 +26,5 @@
 
   # colorschemes.oxocarbon.enable = true;
   plugins.web-devicons.enable = true;
-  
-}
 
+}
