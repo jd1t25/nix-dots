@@ -1,26 +1,24 @@
-{pkgs, ...}:{
+{ pkgs, ... }:
+{
   # home.sessionPath = [
   #   "$HOME/bin"
   # ];
 
   programs.zsh = {
     enable = true;
-    dotDir = "$HOME/.config/zsh";
-    enableCompletion = true;
     autocd = true;
+    dotDir = ".config/zsh";
+    enableCompletion = true;
+    autosuggestion.enable = true;
     # histSize = 10000;
     # histFile = "$HOME/.zsh_history";
     history = {
       save = 10000;
       path = "$ZDOTDIR/.zsh_history";
       extended = true;
+      expireDuplicatesFirst = true;
     };
     syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;
-    # enableLsColors = true;
-    # setOptions = [
-    #   "PROMPT_SUBST"
-    # ];
     # promptInit = ''
     #   kitty +kitten icat --place 10x10@0x0 --scale-up Downloads/1.gif
     #   PROMPT="
@@ -36,10 +34,10 @@
     #     unsetopt autocd nomatch
     #     bindkey -v
     # '';
-      # kitty +kitten icat --place 10x10@0x0 --scale-up Downloads/1.gif
-      # printf "\n$ "
-      # printf "\n$ "
-      # PS1=\n\n\n
+    # kitty +kitten icat --place 10x10@0x0 --scale-up Downloads/1.gif
+    # printf "\n$ "
+    # printf "\n$ "
+    # PS1=\n\n\n
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
@@ -49,6 +47,16 @@
       ];
     };
     # plugins = with pkgs; [
+    #   {
+    #     name = "fast-syntax-highlighting ";
+    #     src = fetchFromGitHub {
+    #       owner = "zdharma-continuum";
+    #       repo = "fast-syntax-highlighting";
+    #       rev = "cf318e06a9b7c9f2219d78f41b46fa6e06011fd9";
+    #       hash = "sha256-RVX9ZSzjBW3LpFs2W86lKI6vtcvDWP6EPxzeTcRZua4=";
+    #     };
+    #     file = "fast-syntax-highlighting.plugin.zsh";
+    #   }
     #   {
     #     name = "zsh-autopair";
     #     src = fetchFromGitHub {
@@ -72,60 +80,17 @@
       source $ZDOTDIR/.zsh-autopair/autopair.zsh
       autopair-init
     '';
-    # shellAliases = {
-    #   ll = "ls -al";
-    #   "." = "cd ..";
-    #   rbld = "git add ~/nix-dots/.; sudo nix flake update; sudo nixos-rebuild switch --flake ~/nix-dots/.#  --option eval-cache false";
-    #   # rbld = "nix-update";
-    #   pmx = "pulsemixer";
-    #   # rbld = "nix-update";
-    #   v = "nvim";
-    #   # v = "nix run 'github:elythh/nixvim'";
-    #   sng = "sudo nix-collect-garbage -d";
-    #   ng = "nix-collect-garbage  --delete-old";
-    #
-    #   zrc = "nvim ~/nix-dots/modules/terminal/zsh/default.nix";
-    #
-    #   ndc = "nvim ~/nix-dots";
-    #   # nxc = "nvim ~/nixvim";
-    #   hrc = "nvim ~/.config/hypr/hyprland.conf";
-    #   nd = "nix develop path:$(pwd)";
-    #   nus = "nixupdateswitch.sh";
-    # };
-    # zplug = {
-    #   enable = true;
-    #   plugins = [
-    #     {name = "zsh-users/zsh-autosuggestions";} # Simple plugin installation
-    #     # {
-    #     #   name = "plugins/git";
-    #     #   tags = [from:oh-my-zsh];
-    #     # }
-    #     # {
-    #     #   name = "plugins/history";
-    #     #   tags = [from:oh-my-zsh];
-    #     # }
-    #     # {
-    #     #   name = "plugins/fuck";
-    #     #   tags = [from:oh-my-zsh];
-    #     # }
-    #     # {
-    #     #   name = "zsh-users/zsh-autosuggestions";
-    #     # }
-    #     # {
-    #     #   name = "zdharma-continuum/fast-syntax-highlighting";
-    #     # }
-    #     # {
-    #     #   name = "themes/robbyrussell";
-    #     #   tags = [from:oh-my-zsh];
-    #     # }
-    #   ];
-    # };
   };
 
   programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   # Prevent the new user dialog in zsh
   # system.userActivationScripts.zshrc = "touch .zshrc";

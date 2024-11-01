@@ -288,7 +288,9 @@
       mode = "n";
       key = "<A-J>";
       action = ":t .<cr>";
-      options = {desc = "Copy Current Line and Paste to next Line";};
+      options = {
+        desc = "Copy Current Line and Paste to next Line";
+      };
     }
 
     {
@@ -400,13 +402,12 @@
         "n"
         "v"
       ];
-      key = "<leader>dd";
+      key = "<leader>x";
       action = "dd";
       options = {
-        desc = "Delete and Copy into register";
+        desc = "Delete or Cut and Copy into register";
       };
     }
-
 
     {
       mode = [
@@ -585,6 +586,26 @@
         remap = true;
       };
     }
+    {
+      mode = "n";
+      key = "<leader>e";
+      # action = ":lua HoptBefore()<CR>";
+      action = "<cmd>:lua MiniFiles.open()<cr>";
+      options = {
+        desc = "Mini Files NvimTree";
+        # silent = true;
+        remap = true;
+      };
+    }
+    {
+      key = "<leader>dd";
+      action = "<cmd> lua vim.diagnostic.open_float() <CR>";
+      options = {
+        silent = true;
+        desc = "Show Diagnostic";
+        remap = true;
+      };
+    }
   ];
   extraConfigLua = ''
     function ToggleLineNumber()
@@ -629,4 +650,3 @@
     end
   '';
 }
-

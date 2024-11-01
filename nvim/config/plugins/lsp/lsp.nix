@@ -7,12 +7,13 @@
       enable = true;
       servers = {
         nixd.enable = true;
-        basedpyright.enable = true;
+        basedpyright.enable = false;
         bashls.enable = true;
         clangd.enable = true;
         nil_ls.enable = false;
         html.enable = true;
-        ruff.enable = true;
+        ruff.enable = false;
+        ruff_lsp.enable = true;
       };
       keymaps = {
         silent = true;

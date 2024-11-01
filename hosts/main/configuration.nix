@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -36,10 +37,15 @@
     ../../modules/system.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users = {
       "jd1t" = import ./home.nix;
     };
@@ -48,7 +54,7 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.devices = ["nodev"];
+  boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -128,7 +134,10 @@
   users.users.jd1t = {
     isNormalUser = true;
     description = "jd1t";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     # packages = with pkgs; [
     #   #  thunderbird
@@ -137,8 +146,8 @@
 
   security.sudo.extraRules = [
     {
-      groups = ["wheel"];
-      commands = ["/home/jd1t/bin/hotspot"];
+      groups = [ "wheel" ];
+      commands = [ "/home/jd1t/bin/hotspot" ];
     }
     # { groups = [ "wheel" ]; commands = [ "/bin/light" ]; }
   ];
@@ -161,12 +170,11 @@
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    mpvpaper = pkgs.callPackage ../../custompkgs/mpvpaper/default.nix {};
+    mpvpaper = pkgs.callPackage ../../custompkgs/mpvpaper/default.nix { };
   };
 
   # Zshrc
-  system.userActivationScripts.zshrc = "touch .zshrc";
-
+  # system.userActivationScripts.zshrc = "touch $ZDOTDIR/.zshrc";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

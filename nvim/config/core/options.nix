@@ -21,8 +21,11 @@
       };
     };
     diagnostics = {
+      virtual_text = false;
+      signs = true;
       update_in_insert = true;
       severity_sort = true;
+      underline = true;
       float = {
         border = "rounded";
       };

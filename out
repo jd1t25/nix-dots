@@ -1,0 +1,30 @@
+Nov 01 12:13:36 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42557]: Starting Home Manager activation
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42557]: Activating checkFilesChanged
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42557]: Activating checkLinkTargets
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]: Existing file '/home/jd1t/$HOME/.config/zsh/.zshrc.backup' would be clobbered by backing up '/home/jd1t/$HOME/.config/zsh/.zshrc'
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]: Please do one of the following:
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]: - Move or remove the above files and try again.
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]: - In standalone mode, use 'home-manager switch -b backup' to back up
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]:   files automatically.
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]: - When used as a NixOS or nix-darwin module, set
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]:     'home-manager.backupFileExtension'
+Nov 01 12:13:36 gan45ha hm-activate-jd1t[42657]:   to, for example, 'backup' and rebuild.
+Nov 01 12:13:36 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
+Nov 01 12:13:36 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
+Nov 01 12:13:36 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
+Nov 01 12:18:02 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
+Nov 01 12:18:02 gan45ha hm-activate-jd1t[47523]: Starting Home Manager activation
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47523]: Activating checkFilesChanged
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47523]: Activating checkLinkTargets
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]: Existing file '/home/jd1t/$HOME/.config/zsh/.zshrc.backup' would be clobbered by backing up '/home/jd1t/$HOME/.config/zsh/.zshrc'
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]: Please do one of the following:
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]: - Move or remove the above files and try again.
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]: - In standalone mode, use 'home-manager switch -b backup' to back up
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]:   files automatically.
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]: - When used as a NixOS or nix-darwin module, set
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]:     'home-manager.backupFileExtension'
+Nov 01 12:18:03 gan45ha hm-activate-jd1t[47619]:   to, for example, 'backup' and rebuild.
+Nov 01 12:18:03 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
+Nov 01 12:18:03 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
+Nov 01 12:18:03 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.

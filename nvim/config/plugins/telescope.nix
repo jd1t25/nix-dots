@@ -8,7 +8,7 @@
     highlightTheme = "oxocarbon";
     settings = {
       defaults = {
-       mappings = {
+        mappings = {
           i = {
             "<C-j>" = {
               __raw = "require('telescope.actions').move_selection_next";

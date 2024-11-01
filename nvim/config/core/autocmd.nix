@@ -19,6 +19,14 @@
         pattern = "help";
         command = "wincmd F1";
       }
+      # {
+      #   event = "CursorHold";
+      #   pattern = "*";
+      #   desc = "Show Diagnostics";
+      #   callback = {
+      #     __raw = "function() if vim.lsp.buf.server_ready() then vim.diagnostic.open_float() end end";
+      #   };
+      # }
     ];
   };
 }

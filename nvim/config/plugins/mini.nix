@@ -154,10 +154,10 @@
           go_out_plus = "H";
           mark_goto = "'";
           mark_set = "m";
-          reset = "<BS>";
+          reset = "K";
           reveal_cwd = "@";
           show_help = "g?";
-          synchronize = "=";
+          synchronize = "J";
           trim_left = "<";
           trim_right = ">";
         };
@@ -174,16 +174,16 @@
           width_nofocus = 15;
           width_preview = 25;
         };
-        keymaps = [
-          {
-            action = "<cmd>:lua MiniFiles.open()<cr>";
-            key = "<leader>e";
-            options = {
-              silent = true;
-              desc = "Nvim Tree (Mini Files) Open";
-            };
-          }
-        ];
+        # keymaps = [
+        #   {
+        #     action = "<cmd>:lua MiniFiles.open()<cr>";
+        #     key = "<leader>e";
+        #     options = {
+        #       silent = true;
+        #       desc = "Nvim Tree (Mini Files) Open";
+        #     };
+        #   }
+        # ];
       };
       move = {
         mappings = {

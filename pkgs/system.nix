@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     git
     curl
@@ -53,7 +54,18 @@
     nil
     at
 
-    (python312.withPackages (ps: with ps; [pandas requests pip flask debugpy isort beautifulsoup4]))
+    (python312.withPackages (
+      ps: with ps; [
+        pandas
+        requests
+        pip
+        flask
+        debugpy
+        isort
+        beautifulsoup4
+        python-lsp-server
+      ]
+    ))
     vimPlugins.friendly-snippets
 
     mpvpaper
@@ -77,5 +89,8 @@
     ruff
     prettierd
     nixfmt-rfc-style
+
+    vlc
+    ruff-lsp
   ];
 }
