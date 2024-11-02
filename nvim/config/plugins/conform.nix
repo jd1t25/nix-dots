@@ -1,7 +1,7 @@
 {
   plugins.conform-nvim = {
-      enable = true;
-       settings = {
+    enable = true;
+    settings = {
 
       format_on_save = {
         lspFallback = true;
@@ -47,7 +47,7 @@
             "prettier"
           ]
         ];
-        python = [ "ruff_format" ];
+        python = [ "ruff_format " ];
         lua = [ "stylua" ];
         nix = [ "nixfmt" ];
         markdown = [
@@ -65,5 +65,5 @@
         ];
       };
     };
-    };
+  };
 }

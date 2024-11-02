@@ -92,5 +92,6 @@
 
     vlc
     ruff-lsp
+    gifsicle
   ];
 }

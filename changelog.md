@@ -20,3 +20,9 @@
 -- Added Multiple Mini Mes Nvim Plugins
 -- Added None-Ls
 -- Added Git Nix Aliases
+
+1-11-2024
+-- Manually added plugins in zsh for faster load times
+
+2-11-2024
+-- IMP: Finally added Pokemon Gifs Sprites in Kitty Terminal

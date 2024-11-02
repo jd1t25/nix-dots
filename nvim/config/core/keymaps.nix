@@ -598,7 +598,7 @@
       };
     }
     {
-      key = "<leader>dd";
+      key = "<leader>d";
       action = "<cmd> lua vim.diagnostic.open_float() <CR>";
       options = {
         silent = true;
