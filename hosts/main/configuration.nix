@@ -35,6 +35,9 @@
 
     # All system services
     ../../modules/system.nix
+
+    # Overlays
+    ./overlays.nix
   ];
 
   nix.settings.experimental-features = [

@@ -13,10 +13,14 @@
     ./plugins/undotree.nix
     ./plugins/lsp
     ./plugins/gitsigns.nix
-    ./plugins/conform.nix
     ./plugins/fidget.nix
     # ./plugins/nvimtree.nix
     ./plugins/mini.nix
+    ./plugins/nonels.nix
+    ./plugins/conform.nix
+    # ./plugins/pythonlspruff.nix
+    ./plugins/toggleterm.nix
+    ./plugins/rainbowbrackets.nix
 
     ./core/options.nix
     ./core/autocmd.nix

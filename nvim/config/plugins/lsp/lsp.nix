@@ -12,8 +12,24 @@
         clangd.enable = true;
         nil_ls.enable = false;
         html.enable = true;
-        ruff.enable = false;
-        ruff_lsp.enable = true;
+        ruff.enable = true;
+        # ruff_lsp.enable = true;
+        # pylsp = {
+        #   enable = true;
+        #   settings.plugins = {
+        #     black.enabled = true;
+        #     flake8.enabled = true;
+        #     isort.enabled = true;
+        #     jedi.enabled = true;
+        #     mccabe.enabled = true;
+        #     pycodestyle.enabled = true;
+        #     pydocstyle.enabled = true;
+        #     pyflakes.enabled = true;
+        #     pylint.enabled = true;
+        #     rope.enabled = true;
+        #     yapf.enabled = true;
+        #   };
+        # };
       };
       keymaps = {
         silent = true;

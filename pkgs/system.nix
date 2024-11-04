@@ -63,7 +63,8 @@
         debugpy
         isort
         beautifulsoup4
-        python-lsp-server
+        black
+        # python-lsp-ruff
       ]
     ))
     vimPlugins.friendly-snippets
@@ -86,12 +87,12 @@
     eza
     nurl
     discord
-    ruff
     prettierd
     nixfmt-rfc-style
 
     vlc
-    ruff-lsp
     gifsicle
+    black
+    isort
   ];
 }

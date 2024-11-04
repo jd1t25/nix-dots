@@ -47,7 +47,12 @@
             "prettier"
           ]
         ];
-        python = [ "ruff_format " ];
+        python = [
+          [
+            "ruff_format"
+            "ruff_organize_imports"
+          ]
+        ];
         lua = [ "stylua" ];
         nix = [ "nixfmt" ];
         markdown = [

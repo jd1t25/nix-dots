@@ -10,27 +10,32 @@
       code_actions = {
         # gitsigns.enable = true;
         statix.enable = true;
-        ruff.enable = true;
+        # ruff_lsp.enable = true;
       };
       diagnostics = {
         statix.enable = true;
         yamllint.enable = true;
-        ruff.enable = true;
+        # ruff_lsp.enable = true;
       };
       formatting = {
         nixfmt = {
           enable = true;
           package = pkgs.nixfmt-rfc-style;
         };
-        ruff.enable = true;
-        # black = {
+        # ruff-lsp = {
         #   enable = true;
-        #   settings = ''
-        #     {
-        #       extra_args = { "--fast" },
-        #     }
-        #   '';
+        #   package = pkgs.ruff-lsp;
         # };
+        # ruff.enable = true;
+        # ruff.fo
+        black = {
+          enable = true;
+          settings = ''
+            {
+              extra_args = { "--fast" },
+            }
+          '';
+        };
         prettier = {
           enable = true;
           disableTsServerFormatter = true;
