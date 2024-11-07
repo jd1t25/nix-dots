@@ -26,3 +26,7 @@
 
 2-11-2024
 -- IMP: Finally added Pokemon Gifs Sprites in Kitty Terminal
+
+7-12-2024
+-- Replaced ToggleTerm with FTerm
+-- Nope Back to ToggleTerm

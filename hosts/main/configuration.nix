@@ -70,7 +70,28 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80
+        443
+        53317
+      ];
+      allowedUDPPorts = [
+        53317
+        # {
+        #   from = 4000;
+        #   to = 4007;
+        # }
+        # {
+        #   from = 8000;
+        #   to = 8010;
+        # }
+      ];
+    };
+  };
 
   # Enable Bluetooth
   hardware.bluetooth = {
@@ -176,6 +197,10 @@
     mpvpaper = pkgs.callPackage ../../custompkgs/mpvpaper/default.nix { };
   };
 
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Zshrc
   # system.userActivationScripts.zshrc = "touch $ZDOTDIR/.zshrc";
 
@@ -193,7 +218,10 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall = {
+  #   enable = true;
+  #   allowedTCPPorts = [ 53317 ];
+  # };
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

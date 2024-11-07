@@ -51,6 +51,7 @@
           [
             "ruff_format"
             "ruff_organize_imports"
+            "black"
           ]
         ];
         lua = [ "stylua" ];

@@ -1,5 +1,6 @@
-_ : {
+_: {
   imports = [
-    ./hotspot.nix
+    # ./hotspot.nix
+    ./pipewire.nix
   ];
 }

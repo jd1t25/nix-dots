@@ -21,6 +21,7 @@
     # ./plugins/pythonlspruff.nix
     ./plugins/toggleterm.nix
     ./plugins/rainbowbrackets.nix
+    ./plugins/sniprun.nix
 
     ./core/options.nix
     ./core/autocmd.nix

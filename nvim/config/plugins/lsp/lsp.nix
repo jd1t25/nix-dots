@@ -7,16 +7,33 @@
       enable = true;
       servers = {
         nixd.enable = true;
-        basedpyright.enable = false;
+        # basedpyright = {
+        #   enable = true;
+        #   extraOptions = {
+        #     analysis = {
+        #       typeCheckingMode = "off"; # Or "basic", "standard", "strict", "recommended", "all"
+        #     };
+        #   };
+        # };
         bashls.enable = true;
         clangd.enable = true;
         nil_ls.enable = false;
         html.enable = true;
         ruff.enable = true;
+        # pyright.enable = true;
+        pyright = {
+          enable = true;
+          extraOptions = {
+            analysis = {
+              reportAttributeAccessIssue = "none";
+            };
+          };
+        };
         # ruff_lsp.enable = true;
         # pylsp = {
         #   enable = true;
         #   settings.plugins = {
+        #     # ruff.enable = true;
         #     black.enabled = true;
         #     flake8.enabled = true;
         #     isort.enabled = true;
@@ -25,10 +42,20 @@
         #     pycodestyle.enabled = true;
         #     pydocstyle.enabled = true;
         #     pyflakes.enabled = true;
-        #     pylint.enabled = true;
+        #     pylint = {
+        #       enabled = false;
+        #     };
         #     rope.enabled = true;
         #     yapf.enabled = true;
         #   };
+        # extraOptions = {
+        #   plugins = {
+        #     pycodestyle = {
+        #       ignore = [ "W391" ];
+        #       maxLineLength = 100;
+        #     };
+        #   };
+        # };
         # };
       };
       keymaps = {
@@ -85,24 +112,41 @@
     };
   };
   extraConfigLua = ''
-      local _border = "rounded"
+     vim.diagnostic.config({
+      underline = true,
+      -- virtual_text = {
+      --   prefix = "",
+      --   severity = nil,
+      --   source = "if_many",
+      --   format = nil
+      -- },
+      signs = true,
+      severity_sort = true,
+      update_in_insert = false
+    })
 
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-          vim.lsp.handlers.hover, {
-          border = _border
-          }
-          )
+    local _border = "rounded"
 
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-          vim.lsp.handlers.signature_help, {
-          border = _border
-          }
-          )
+    -- Configure hover handler with border
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+      vim.lsp.handlers.hover, {
+        border = _border
+      }
+    )
 
-      vim.diagnostic.config{
-        float={border=_border}
-      };
+    -- Configure signatureHelp handler with border
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+      vim.lsp.handlers.signature_help, {
+        border = _border
+      }
+    )
 
+    -- Apply the same border setting to diagnostics popups
+    vim.diagnostic.config({
+      float = { border = _border }
+    })
+
+    -- Set default border for LSP windows
     require('lspconfig.ui.windows').default_options = {
       border = _border
     }

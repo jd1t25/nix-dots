@@ -28,6 +28,15 @@
       #   };
       # }
     ];
+    extraConfigLua = ''
+        vim.api.nvim_create_autocmd("VimLeave", {
+        pattern = "*",
+        callback = function()
+            local harpoon = require("harpoon")
+            harpoon:list():clear()
+        end
+      })
+    '';
   };
 }
 

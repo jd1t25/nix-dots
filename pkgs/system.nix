@@ -24,6 +24,9 @@
     ethtool
     pciutils
     usbutils
+    gvfs
+    udisks
+    udiskie
     vim
     wl-clipboard
     wofi-emoji
@@ -64,10 +67,18 @@
         isort
         beautifulsoup4
         black
+        osmnx
         # python-lsp-ruff
       ]
     ))
     vimPlugins.friendly-snippets
+    live-server
+    neovim-remote
+
+    nodejs
+    yarn
+    nodePackages.pnpm
+    nodePackages.live-server
 
     mpvpaper
     yt-dlp
@@ -81,6 +92,7 @@
     libgcc
     gcc
     linux-router
+    haveged
 
     chafa
     thefuck
@@ -94,5 +106,6 @@
     gifsicle
     black
     isort
+    # ruff-lsp
   ];
 }

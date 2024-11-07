@@ -30,5 +30,25 @@
         desc = "Terminal Exit";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>t";
+      action = "<cmd>TermExec dir='%:p:h' cmd='python %:p'<cr>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Run Current Python File";
+      };
+    }
+    {
+      mode = "t";
+      key = "<leader>t";
+      action = "<C-\\><C-n>:ToggleTerm<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Terminal Exit";
+      };
+    }
   ];
 }
