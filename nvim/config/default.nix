@@ -22,6 +22,8 @@
     ./plugins/toggleterm.nix
     ./plugins/rainbowbrackets.nix
     ./plugins/sniprun.nix
+    ./plugins/transparent.nix
+    ./plugins/debugging.nix
 
     ./core/options.nix
     ./core/autocmd.nix

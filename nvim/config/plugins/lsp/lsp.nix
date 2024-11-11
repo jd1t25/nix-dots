@@ -95,7 +95,7 @@
           };
         };
         diagnostic = {
-          "<leader>cd" = {
+          "<leader>dd" = {
             action = "open_float";
             desc = "Line Diagnostics";
           };

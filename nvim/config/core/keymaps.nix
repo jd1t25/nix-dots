@@ -597,15 +597,15 @@
         remap = true;
       };
     }
-    {
-      key = "<leader>d";
-      action = "<cmd> lua vim.diagnostic.open_float() <CR>";
-      options = {
-        silent = true;
-        desc = "Show Diagnostic";
-        remap = true;
-      };
-    }
+    # {
+    #   key = "<leader>d";
+    #   action = "<cmd> lua vim.diagnostic.open_float() <CR>";
+    #   options = {
+    #     silent = true;
+    #     desc = "Show Diagnostic";
+    #     remap = true;
+    #   };
+    # }
   ];
   extraConfigLua = ''
     function ToggleLineNumber()
