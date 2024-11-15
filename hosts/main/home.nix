@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ../../modules/home.nix
@@ -17,6 +17,23 @@
       "$HOME/bin"
     ];
 
+    file =
+      let
+        sourceDir = ../../configs;
+      in
+      # Loop through all subdirectories and create symlinks
+      builtins.listToAttrs (
+        map (dirName: {
+          name = ".config/${dirName}";
+          value = {
+            source = "${sourceDir}/${dirName}";
+          };
+        }) (builtins.attrNames (builtins.readDir sourceDir))
+      );
+
+    # ".config" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink ../../configs;
+    # };
     ### DotFiles
     # file."configs" = {
     #   target = "$HOME/.config";
@@ -84,6 +101,8 @@
     pciutils # lspci
     usbutils # lsusb
   ];
+
+  # home-manager.backupFileExtension = "backup";
 
   # home.file."configs" = {
   #   target = "$HOME/.config";

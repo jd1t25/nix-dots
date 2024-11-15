@@ -1,50 +1,20 @@
-Nov 01 13:04:08 gan45ha systemd[1]: Stopping Home Manager environment for jd1t...
-Nov 01 13:04:08 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Starting Home Manager activation
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating checkFilesChanged
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating checkLinkTargets
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating writeBoundary
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating installPackages
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85730]: replacing old 'home-manager-path'
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85730]: installing 'home-manager-path'
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85730]: building '/nix/store/nsmngb5gian3zalhrcl9c3b99w4cbgqk-user-environment.drv'...
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating linkGeneration
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Cleaning up orphan links from /home/jd1t
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Creating profile generation 31
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Creating home file links in /home/jd1t
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating onFilesChange
-Nov 01 13:04:08 gan45ha hm-activate-jd1t[85695]: Activating reloadSystemd
-Nov 01 13:04:09 gan45ha systemd[1]: Finished Home Manager environment for jd1t.
-Nov 01 13:07:43 gan45ha systemd[1]: home-manager-jd1t.service: Deactivated successfully.
-Nov 01 13:07:43 gan45ha systemd[1]: Stopped Home Manager environment for jd1t.
-Nov 01 13:07:43 gan45ha systemd[1]: Stopping Home Manager environment for jd1t...
-Nov 01 13:07:43 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91400]: Starting Home Manager activation
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91400]: Activating checkFilesChanged
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91400]: Activating checkLinkTargets
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]: Existing file '/home/jd1t/.zshrc' is in the way of '/nix/store/04dh3ncglp7g04d07xn9hpc408xm5wg7-home-manager-files/.zshrc'
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]: Please do one of the following:
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]: - Move or remove the above files and try again.
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]: - In standalone mode, use 'home-manager switch -b backup' to back up
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]:   files automatically.
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]: - When used as a NixOS or nix-darwin module, set
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]:     'home-manager.backupFileExtension'
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91421]:   to, for example, 'backup' and rebuild.
-Nov 01 13:07:43 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
-Nov 01 13:07:43 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
-Nov 01 13:07:43 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
-Nov 01 13:07:43 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91515]: Starting Home Manager activation
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91515]: Activating checkFilesChanged
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91515]: Activating checkLinkTargets
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]: Existing file '/home/jd1t/.zshrc' is in the way of '/nix/store/04dh3ncglp7g04d07xn9hpc408xm5wg7-home-manager-files/.zshrc'
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]: Please do one of the following:
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]: - Move or remove the above files and try again.
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]: - In standalone mode, use 'home-manager switch -b backup' to back up
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]:   files automatically.
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]: - When used as a NixOS or nix-darwin module, set
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]:     'home-manager.backupFileExtension'
-Nov 01 13:07:43 gan45ha hm-activate-jd1t[91536]:   to, for example, 'backup' and rebuild.
-Nov 01 13:07:43 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
-Nov 01 13:07:43 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
-Nov 01 13:07:43 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
+Nov 16 04:41:57 gan45ha hm-activate-jd1t[27159]:   to, for example, 'backup' and rebuild.
+Nov 16 04:41:57 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
+Nov 16 04:41:57 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
+Nov 16 04:41:57 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
+Nov 16 04:44:54 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28827]: Starting Home Manager activation
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28827]: Activating checkFilesChanged
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28827]: Activating checkLinkTargets
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28945]: cmp: /nix/store/yi1y615c1g9awnlib4g140sjmydmra2k-home-manager-files/.config/hypr: Is a directory
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]: Existing file '/home/jd1t/.config/hypr' is in the way of '/nix/store/yi1y615c1g9awnlib4g140sjmydmra2k-home-manager-files/.config/hypr'
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]: Please do one of the following:
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]: - Move or remove the above files and try again.
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]: - In standalone mode, use 'home-manager switch -b backup' to back up
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]:   files automatically.
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]: - When used as a NixOS or nix-darwin module, set
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]:     'home-manager.backupFileExtension'
+Nov 16 04:44:54 gan45ha hm-activate-jd1t[28920]:   to, for example, 'backup' and rebuild.
+Nov 16 04:44:54 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
+Nov 16 04:44:54 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
+Nov 16 04:44:54 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.

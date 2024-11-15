@@ -18,26 +18,26 @@
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["ntfs"];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/11e247e1-5779-4077-b74c-70c7a985790f";
-    fsType = "ext4";
-  };
+fileSystems."/" =
+    { device = "/dev/disk/by-uuid/441f7beb-288b-408d-962a-798f4db0e742";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/E765-D7F7";
-    fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/B675-EFCA";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/12d8bde5-9b4b-451f-95cf-ff66ee8de9a5";
-    fsType = "ext4";
-  };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/55f8fb32-f5f0-4a30-b0ef-9eefda4d14bb";
+      fsType = "ext4";
+    };
 
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/44b4c669-40d5-400b-8fcf-bf6815dbedfa";}
-  ];
-
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/f6616176-b4f0-494e-bc8d-1594b9a07c92"; }
+    ];
+ 
   fileSystems."/mnt/win1" = {
     device = "/dev/disk/by-uuid/06CE2FB0CE2F96C9";
     fsType = "ntfs-3g";

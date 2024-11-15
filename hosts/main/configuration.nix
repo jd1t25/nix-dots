@@ -52,7 +52,7 @@
     users = {
       "jd1t" = import ./home.nix;
     };
-    # backupFileExtension = "backup";
+    backupFileExtension = "backup";
   };
 
   # Bootloader.
