@@ -1,20 +1,20 @@
-Nov 16 15:53:32 gan45ha systemd[1]: home-manager-jd1t.service: Consumed 355ms CPU time, 6.5M memory peak, 1.1M read from disk.
-Nov 16 15:55:42 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Starting Home Manager activation
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating checkFilesChanged
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating checkLinkTargets
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating writeBoundary
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating installPackages
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70873]: replacing old 'home-manager-path'
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70873]: installing 'home-manager-path'
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating linkGeneration
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Cleaning up orphan links from /home/jd1t
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Creating profile generation 9
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Creating home file links in /home/jd1t
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating onFilesChange
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating reloadSystemd
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[70813]: Activating symlinkbin
-Nov 16 15:55:43 gan45ha hm-activate-jd1t[71034]: ln: failed to create symbolic link '/home/jd1t/bin': File exists
-Nov 16 15:55:43 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=1/FAILURE
-Nov 16 15:55:43 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
-Nov 16 15:55:43 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
+Nov 16 20:59:32 gan45ha systemd[1]: Stopped Home Manager environment for jd1t.
+Nov 16 20:59:32 gan45ha systemd[1]: Stopping Home Manager environment for jd1t...
+Nov 16 20:59:32 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17120]: Starting Home Manager activation
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17120]: Activating checkFilesChanged
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17120]: Activating checkLinkTargets
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17120]: Activating hyprreload
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17178]: /nix/store/3889jgsi4jha5cpwhzrynawl7fmsrv7i-home-manager-generation/activate: line 239: hyprctl: command not found
+Nov 16 20:59:32 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=127/n/a
+Nov 16 20:59:32 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
+Nov 16 20:59:32 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
+Nov 16 20:59:32 gan45ha systemd[1]: Starting Home Manager environment for jd1t...
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17260]: Starting Home Manager activation
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17260]: Activating checkFilesChanged
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17260]: Activating checkLinkTargets
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17260]: Activating hyprreload
+Nov 16 20:59:32 gan45ha hm-activate-jd1t[17318]: /nix/store/3889jgsi4jha5cpwhzrynawl7fmsrv7i-home-manager-generation/activate: line 239: hyprctl: command not found
+Nov 16 20:59:32 gan45ha systemd[1]: home-manager-jd1t.service: Main process exited, code=exited, status=127/n/a
+Nov 16 20:59:32 gan45ha systemd[1]: home-manager-jd1t.service: Failed with result 'exit-code'.
+Nov 16 20:59:32 gan45ha systemd[1]: Failed to start Home Manager environment for jd1t.
