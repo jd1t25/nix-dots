@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ../../modules/home.nix
@@ -31,6 +31,15 @@
         }) (builtins.attrNames (builtins.readDir sourceDir))
       );
 
+    activation = {
+      symlinkbin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        if [[ ! -d "$HOME/bin" ]]; then
+          ln -s ${toString ./../../bin} $HOME
+        fi
+      '';
+    };
+
+    # ln -s ./. + "/../../bin" $HOME
     # ".config" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ../../configs;
     # };

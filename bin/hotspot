@@ -1,4 +1,5 @@
 #! /usr/bin/env nix-shell
 #! nix-shell -i zsh -p zsh
+# vim:set ft=.sh:
 
-lnxrouter --ap wlo1 "Go Go Router Rangers" -p "Qwerty?123" --daemon
+sudo lnxrouter --ap wlo1 "Go Go Router Rangers" -p "Qwerty?123" --daemon

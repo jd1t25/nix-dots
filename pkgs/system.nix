@@ -107,5 +107,7 @@
     black
     isort
     # ruff-lsp
+
+    stow
   ];
 }
