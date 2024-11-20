@@ -28,14 +28,14 @@
         # };
         # ruff.enable = true;
         # ruff.fo
-        black = {
-          enable = true;
-          settings = ''
-            {
-              extra_args = { "--fast" },
-            }
-          '';
-        };
+        # black = {
+        #   enable = true;
+        #   settings = ''
+        #     {
+        #       extra_args = { "--fast" },
+        #     }
+        #   '';
+        # };
         prettier = {
           enable = true;
           disableTsServerFormatter = true;

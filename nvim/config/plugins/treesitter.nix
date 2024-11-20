@@ -8,17 +8,10 @@
         "python"
         "javascript"
         "typescript"
-        "c"
       ];
       highlight.enable = true;
       incremental_selection = {
         enable = true;
-        keymaps = {
-          init_selection = "<c-space>";
-          node_decremental = "<c-backspace>";
-          node_incremental = "<c-space>";
-          scope_incremental = "<c-s>";
-        };
         indent = {
           enable = true;
         };

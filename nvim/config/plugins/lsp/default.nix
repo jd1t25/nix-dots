@@ -1,7 +1,8 @@
-_ : {
+_: {
   imports = [
-    ./lsp.nix
     ./cmp.nix
+    ./lsp.nix
+    ./friendlysnippets.nix
     ./luasnip.nix
   ];
 }

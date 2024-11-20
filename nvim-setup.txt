@@ -1,18 +1,17 @@
 # Nixvim
-treesitter
-web-devicons
-sleuth
+!treesitter
+!web-devicons
+!sleuth
 ts-autotag
 none-ls
 lazygit
 dap
-lint
-friendly-snippets
-luasnip
-toggleterm
-gitsigns
-telescope
-telescope-dap-nvim
+!lint
+!friendly-snippets
+!luasnip
+toggleterm to tmux
+!gitsigns
+!telescope
 todo-coments
 undotree
 nix
@@ -22,6 +21,7 @@ fidget
 hop
 mini
 //colorizer
+nvim-various-textobjs
 ufo
 
 
@@ -91,3 +91,5 @@ barbar example
       call CustomTelescopeHighlights()
     ]], false)
 
+
+taskwarrior

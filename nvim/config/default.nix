@@ -1,37 +1,27 @@
-{
-  # config,
-  # lib,
-  ...
-}:
-{
+_: {
   imports = [
-    ./plugins/sleuth.nix
-    ./plugins/telescope.nix
-    ./plugins/hop.nix
-    ./plugins/treesitter.nix
-    ./plugins/harpoon.nix
-    ./plugins/undotree.nix
-    ./plugins/lsp
-    ./plugins/gitsigns.nix
-    ./plugins/fidget.nix
-    # ./plugins/nvimtree.nix
-    ./plugins/mini.nix
-    ./plugins/nonels.nix
-    ./plugins/conform.nix
-    # ./plugins/pythonlspruff.nix
-    ./plugins/toggleterm.nix
-    ./plugins/rainbowbrackets.nix
-    ./plugins/sniprun.nix
-    ./plugins/transparent.nix
-    ./plugins/debugging.nix
-
-    ./core/options.nix
     ./core/autocmd.nix
     ./core/keymaps.nix
-    ./core/colorschemes.nix
+    ./core/options.nix
+
+    ./plugins/treesitter.nix
+    ./plugins/indentomatic.nix
+    ./plugins/nvimtsautotag.nix
+    ./plugins/lint.nix
+    ./plugins/lsp
+    ./plugins/telescope.nix
+    ./plugins/gitsigns.nix
+    ./plugins/undotree.nix
+    ./plugins/nix.nix
+    ./plugins/hop.nix
+    ./plugins/fidget.nix
+    ./plugins/ufo.nix
+    ./plugins/debugger.nix
+    ./plugins/nonels.nix
+    ./plugins/rainbowbrackets.nix
+    ./plugins/transparent.nix
+    ./plugins/sniprun.nix
   ];
 
-  # colorschemes.oxocarbon.enable = true;
   plugins.web-devicons.enable = true;
-
 }

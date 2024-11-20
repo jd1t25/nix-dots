@@ -106,8 +106,12 @@
     gifsicle
     black
     isort
+    ruff
+    vale
+    nodePackages.jsonlint
     # ruff-lsp
 
     stow
+    lazygit
   ];
 }

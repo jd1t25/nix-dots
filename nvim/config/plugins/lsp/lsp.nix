@@ -29,7 +29,6 @@
             };
           };
         };
-        # ruff_lsp.enable = true;
         # pylsp = {
         #   enable = true;
         #   settings.plugins = {
@@ -112,19 +111,6 @@
     };
   };
   extraConfigLua = ''
-     vim.diagnostic.config({
-      underline = true,
-      -- virtual_text = {
-      --   prefix = "",
-      --   severity = nil,
-      --   source = "if_many",
-      --   format = nil
-      -- },
-      signs = true,
-      severity_sort = true,
-      update_in_insert = false
-    })
-
     local _border = "rounded"
 
     -- Configure hover handler with border

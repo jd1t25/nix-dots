@@ -586,17 +586,17 @@
         remap = true;
       };
     }
-    {
-      mode = "n";
-      key = "<leader>e";
-      # action = ":lua HoptBefore()<CR>";
-      action = "<cmd>:lua MiniFiles.open()<cr>";
-      options = {
-        desc = "Mini Files NvimTree";
-        # silent = true;
-        remap = true;
-      };
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>e";
+    #   # action = ":lua HoptBefore()<CR>";
+    #   action = "<cmd>:lua MiniFiles.open()<cr>";
+    #   options = {
+    #     desc = "Mini Files NvimTree";
+    #     # silent = true;
+    #     remap = true;
+    #   };
+    # }
     # {
     #   key = "<leader>d";
     #   action = "<cmd> lua vim.diagnostic.open_float() <CR>";
