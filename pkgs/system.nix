@@ -113,5 +113,6 @@
 
     stow
     lazygit
+    taskwarrior3
   ];
 }
