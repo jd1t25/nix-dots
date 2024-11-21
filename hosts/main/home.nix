@@ -32,10 +32,13 @@
       );
 
     activation = {
-      symlinkbin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      symlinkBin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         if [[ ! -d "$HOME/bin" ]]; then
-          ln -s ${toString ./../../bin} $HOME
+          ln -s $NIXOS_CONFIG/bin $HOME
         fi
+      '';
+      createDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        mkdir -p $HOME/Screenshots
       '';
     };
 
