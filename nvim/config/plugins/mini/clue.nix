@@ -70,13 +70,16 @@
 
   extraConfigLua = ''
     local miniclue = require('mini.clue')
-    miniclue.setup({clues = {
-            miniclue.gen_clues.builtin_completion(),
-            miniclue.gen_clues.g(),
-            miniclue.gen_clues.marks(),
-            miniclue.gen_clues.registers(),
-            miniclue.gen_clues.windows(),
-            miniclue.gen_clues.z(),
-      }},)
+
+    miniclue.setup({
+      clues = {
+        miniclue.gen_clues.builtin_completion(),
+        miniclue.gen_clues.g(),
+        miniclue.gen_clues.marks(),
+        miniclue.gen_clues.registers(),
+        miniclue.gen_clues.windows(),
+        miniclue.gen_clues.z(),
+      }
+    })
   '';
 }

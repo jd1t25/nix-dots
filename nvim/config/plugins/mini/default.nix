@@ -1,5 +1,10 @@
 _: {
-  plugins.mini.enable = true;
+  plugins.mini = {
+    enable = true;
+    modules = {
+      colors.enable = true;
+    };
+  };
 
   imports = [
     ./clue.nix
@@ -10,5 +15,6 @@ _: {
     ./tabline.nix
     ./hightlighters.nix
     ./trailspace.nix
+    ./base16.nix
   ];
 }

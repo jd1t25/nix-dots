@@ -9,6 +9,7 @@ _: {
     ./plugins/nvimtsautotag.nix
     ./plugins/lint.nix
     ./plugins/lsp
+    ./plugins/mini
     ./plugins/telescope.nix
     ./plugins/gitsigns.nix
     ./plugins/undotree.nix

@@ -114,5 +114,8 @@
     stow
     lazygit
     taskwarrior3
+
+    nsxiv
+    feh
   ];
 }

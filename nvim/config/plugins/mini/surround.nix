@@ -1,5 +1,5 @@
 {
-  plugins.surround = {
+  plugins.mini.modules.surround = {
     mappings = {
       add = "sa";
       delete = "sd";
