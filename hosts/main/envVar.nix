@@ -1,4 +1,5 @@
-_: {
+{ pkgs, ... }:
+{
   environment.variables = {
     ZSH_THEME_GIT_PROMPT_PREFIX = "%{$fg_bold[blue]%}git:(%{$fg[red]%}";
     ZSH_THEME_GIT_PROMPT_SUFFIX = "%{$reset_color%} ";
@@ -7,5 +8,6 @@ _: {
     EDITOR = "nvim";
     NIXOS_CONFIG = "$HOME/nix-dots";
     XDG_SCREENSHOTS_DIR = "$HOME/Screenshots";
+    QUARTO_PYTHON = "${pkgs.python3.outPath}";
   };
 }

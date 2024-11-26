@@ -22,6 +22,8 @@ _: {
     ./plugins/rainbowbrackets.nix
     ./plugins/transparent.nix
     ./plugins/sniprun.nix
+    ./plugins/comment.nix
+    ./plugins/quarto.nix
   ];
 
   plugins.web-devicons.enable = true;

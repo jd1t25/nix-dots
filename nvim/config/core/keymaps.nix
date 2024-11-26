@@ -136,8 +136,8 @@
     # {
     #   mode = "n";
     #   key = "<C-h>";
-    #   action = "<C-W>h";
-    #   options = {
+    # action = "<C-W>h";
+    # options = {
     #     silent = true;
     #     desc = "Move to window left";
     #   };
@@ -422,17 +422,17 @@
     }
 
     # Cut to void register
-    {
-      mode = [
-        "n"
-        "v"
-      ];
-      key = "c";
-      action = ''"_c'';
-      options = {
-        desc = "Cut to void register";
-      };
-    }
+    # {
+    #   mode = [
+    #     "n"
+    #     "v"
+    #   ];
+    #   key = "c";
+    #   action = ''"_c'';
+    #   options = {
+    #     desc = "Cut to void register";
+    #   };
+    # }
 
     # <C-c> instead of pressing esc just because
     # {

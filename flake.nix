@@ -15,6 +15,9 @@
     #nixvim.url = "github:jd1t25/nixvim";
     nixvim.url = "path:./nvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
   };
 
   outputs =
@@ -41,6 +44,7 @@
             environment.systemPackages = [
               inputs.alejandra.defaultPackage.${system}
               inputs.nixvim.packages.${system}.default
+              inputs.zen-browser.packages."${system}".default
             ];
           }
         ];

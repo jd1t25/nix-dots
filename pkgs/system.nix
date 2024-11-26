@@ -68,9 +68,15 @@
         beautifulsoup4
         black
         osmnx
+        jupyter-core
+        pyyaml
+        nbformat
+        nbclient
+        ipykernel
         # python-lsp-ruff
       ]
     ))
+    quarto
     vimPlugins.friendly-snippets
     live-server
     neovim-remote

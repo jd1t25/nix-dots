@@ -97,6 +97,11 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    settings = {
+      General = {
+        ControllerMode = "bredr";
+      };
+    };
   };
 
   services.blueman.enable = true;
