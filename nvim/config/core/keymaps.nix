@@ -648,5 +648,34 @@
     function HoptBefore()
       hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
     end
+
+
+    --  Quarto
+    function is_code_chunk()
+    -- local is_code_chunk = function()
+      local current, _ = require('otter.keeper').get_current_language_context()
+      if current then
+        return true
+      else
+        return false
+      end
+    end
+
+
+    function insert_py_chunk()
+      local lang = 'python'  -- Example, replace with actual logic for 'lang'
+
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<esc>', true, false, true), 'n', true)
+
+      if is_code_chunk() then
+        keys = [[2o```<cr><cr>```{]] .. lang .. [[}<esc>2o]]
+      else
+        keys = [[2o```{]] .. lang .. [[}<cr>```<esc>2O]]
+      end
+
+      keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
+
+      vim.api.nvim_feedkeys(keys, 'n', false)
+    end
   '';
 }

@@ -33,5 +33,6 @@
     localsend
     live-server
     whatsapp-for-linux
+    foliate
   ];
 }

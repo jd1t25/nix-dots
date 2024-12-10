@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -7,7 +8,7 @@
     fira-code
     fira-code-symbols
     mplus-outline-fonts.githubRelease
-    (nerdfonts.override {fonts = ["FiraCode" "ComicShannsMono" "CommitMono"];})
+    commit-mono
     martian-mono
     mona-sans
     azeret-mono

@@ -73,6 +73,7 @@
         nbformat
         nbclient
         ipykernel
+        ebooklib
         # python-lsp-ruff
       ]
     ))
