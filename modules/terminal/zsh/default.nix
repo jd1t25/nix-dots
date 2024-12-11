@@ -72,7 +72,9 @@
       source ${./alias.zsh}
       source ${./functions.zsh}
       eval $(thefuck --alias)
-      kitty +kitten icat --align right -n $(find /mnt/win1/Myself/Pokemon/gifs -type f | shuf -n 1) '';
+      kitty +kitten icat --align right -n $(shuf -n 1 /mnt/win1/Myself/Pokemon/pokemon_gifs.txt)
+    '';
+    # kitty +kitten icat --align right -n $(find /mnt/win1/Myself/Pokemon/gifs -type f | shuf -n 1)
     # NEWLINE=$'\n'
     # if [[ -z "$FIRST_PROMPT" ]]; then
     #     PROMPT="
