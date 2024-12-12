@@ -16,7 +16,8 @@
     nixvim.url = "path:./nvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-    zen-browser.url = "github:ch4og/zen-browser-flake";
+    # zen-browser.url = "github:ch4og/zen-browser-flake";
+    zen-browser.url = "path:./custompkgs/zen";
 
   };
 
